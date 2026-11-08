@@ -11,8 +11,8 @@ catchment and field maps, monitored P/N loads, screened nature actions, the 22 d
 queries with row-level source lineage, saved query runs, experimental nutrient input/loss runs and
 Gemini answers that call those queries as read-only tools.
 
-**Validation → Discoveries** combines calculated discoveries with plain-language
-suggestions, effect estimates and source links. Background specialists cover footprint analysis,
+The **Overview** shows the top three findings, and **Actions → Findings and next steps** lists them all: calculated
+discoveries with plain-language suggestions, effect estimates and source links. Background specialists cover footprint analysis,
 data quality, raw materials, reductions and nature questions. A contextual **Ask AI** panel floats on every page. The compact incident Sankey breaks distinct
 incidents down by dataset, type and Critical/High/Medium/Low priority; adjacent **Root cause** buttons
 open a specialized evidence-based analyst. **Traceability** covers both reported figures and incident
