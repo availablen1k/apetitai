@@ -1,0 +1,1 @@
+DROP TRIGGER discovery_findings_no_delete;

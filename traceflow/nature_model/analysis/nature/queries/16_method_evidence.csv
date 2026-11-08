@@ -1,0 +1,224 @@
+result_key,method_id,name,purpose,implementation_status,interpretation,review_status,evidence_role,note,relative_path,heading,start_line,end_line,section_text,document_sha256,document_verification,reference_name,url,licence,reference_verification
+Ee79b104e06d881269890,annual_weather,Complete-month weather summaries,Expose rainfall and PET context without confusing scenarios or partial windows.,implemented_assumption,"Annual and Apr-Sep sums are prototype exposure summaries, not a nutrient-loss model.",unreviewed,context_only,Synthetic weather and nutrient-loss dependencies; does not prescribe our calendar window.,../docs/SIMULATION_DESIGN.md,Generators,43,70,"## Generators
+
+1. **Weather.**
+   * Periodic-spline climatology per region.
+   * Monthly regime anomalies: the historical years are *inspired by* documented seasons, such as the hot and dry 2018, the drought of 2021, the dry early summer of 2023, the good Finnish pea year of 2026 and the Swedish drought of 2026.
+   * Daily temperature follows an AR(1) process with regional and cell components.
+   * Precipitation uses Markov-chain occurrence with gamma-distributed amounts, shared across the region.
+   * PET uses the Hargreaves formula.
+   * Future years apply monthly deltas that grow with time by SSP. The historical warming trend is part of the same ramp.
+2. **Phenology and soil water.**
+   * Sowing date: the first 5-day period after a crop-specific threshold.
+   * Stages are defined by GDD (base 5 °C).
+   * Bucket soil-water model by soil class, reset on 1 April.
+3. **Yield, the truth model.**
+   * `Ypot × technology trend × farm skill × soil suitability × W(weather) × pests × N response × organic-farming factor × noise`.
+   * W multiplies stage-specific drought stress (reduced by irrigation), heat days in sensitive stages, waterlogging after sowing on clay, rain before harvest and immaturity.
+   * Pests: potato late blight (warm, wet July–August, mitigated by sprays) and pollen beetle on turnip rape (warm May).
+4. **Management.** N, P, diesel, liming events, sprays (responding to blight pressure), adoption of low-carbon fertiliser (from 2023), catch crops and irrigation.
+5. **Footprints.** See METHODOLOGY.md §5.
+6. **Corporate activity.**
+   * Annual plans per site and carrier reproduce the public trajectory: the 2019 purchased steam, the 2020 wind GoOs, Kantvik's own biosteam from 2021, the Säkylä energy system from 2023 and Bjuv from December 2025.
+   * These plans are disaggregated into monthly meters, delivery lots, ERP lines (vessel lots in tonnes, truck lots in kg), shipments by leg, waste transfer notes and so on.
+7. **Raw-feed issues.** Every planted issue is logged with its true and observed value. Legitimate traps, such as credit notes, are not issues.
+8. **Nature.**
+   * Field P and N losses depend on soil-P test, clay, slope, erosion-prone crops, rainfall, buffer strips, catch crops, drainage and N surplus.
+   * Delivery to water decays with distance; then catchment retention applies.
+   * Monitored outlet loads also include non-contract farmland and natural background.
+
+",b926521905269350bc5fab5203912f4a3516f3ee12c6750d7a980859ad2293f3,package_provided_not_independently_verified,,,,
+E96be4970a4ee0c6d4900,carbon_reference_lookup,Carbon-reference context,Keep carbon co-benefits distinguishable from water and biodiversity outcomes.,reference_lookup_only,"No new emissions calculation; factors retain units, GWP, value status and boundary exclusions.",unreviewed,package_method_context,Organic-soil omissions and FLAG/non-FLAG boundaries.,../docs/METHODOLOGY.md,"5. Contract-farm footprint (cradle to farm gate, per hectare)",71,89,"## 5. Contract-farm footprint (cradle to farm gate, per hectare)
+
+| Source | Formula |
+|---|---|
+| Fertiliser manufacture | N × 3.7 kg CO2e/kg N (AN, Yara verified ≈ 3.73), or 0.9 for low-carbon AN; P × 1.6; K (= 2.2 × P) × 0.5 |
+| Direct N2O (FLAG) | (N_mineral × 0.016 + (N_manure + N_residues) × 0.006) × 44/28 × 273 (IPCC 2019 wet climate) |
+| Indirect N2O (FLAG) | [(N_min × 0.05 + N_man × 0.21) × 0.014 + (N_min + N_man + N_res) × 0.24 × 0.011] × 44/28 × 273 |
+| Diesel | litres × (2.10 Finnish average blend or 2.45 Swedish, combustion + 0.61 WTT) |
+| Liming (FLAG) | t × 0.44 t CO2/t |
+| Drained organic soils (FLAG) | 29.0 t CO2/ha/yr for annual crops (20.9 for grass) + 13 kg N2O-N/ha/yr (Finnish GHG inventory; IPCC Wetlands Supplement) |
+| Pesticides | 8 kg CO2e per spray pass |
+| Electricity | Storage/drying kWh/t × yield + 180 kWh/ha if irrigated, × grid factor |
+
+* Residue N per tonne of product is given in `tools/ccn_tools/factors.py` (`RESIDUE_N_PER_T`). Biological N fixation by peas is not an N input.
+* **Allocation:** farm emissions for the crop are divided by delivered kg. Intake rejections stay with the delivered product.
+* **FLAG (SBTi) part:** direct and indirect N2O, organic soils and liming. Fertiliser manufacture, diesel, electricity and pesticides are non-FLAG.
+* **FLAG share of purchased commodities:** each library factor carries a `flag_share`.
+* **Organic soils are included.** Finnish cropland is about 11 % organic soils nationally (Luke) and less in south-west Finland. The `current_calculator_footprints.csv` file reproduces the current practice, which assumes mineral soil and excludes these emissions, so teams can compare the two.
+
+",ca55ac4ddc1f39b1b7136abdbb7417af4448685fe0f95559ce19e5a827c0b243,package_provided_not_independently_verified,,,,
+E525744a095fe7a3a0e02,field_join,Annual field and management join,Locate farming pressures using exact field/farm/crop/year relationships.,implemented,Static ownership and crop-list context; no historical contract proof.,unreviewed,package_data_description,Describes source grains and mapping attributes.,../docs/NATURE_SBTN.md,Data,7,23,"## Data
+
+| File | Content |
+|---|---|
+| `06_nature/parcels.geojson`, `01_master/parcels.csv` | Synthetic parcels with farm, soil class (soil map, ~88 % accurate), clay %, slope, distance to water, drainage, latest soil-P test (18 % missing), buffer strip and catchment |
+| `03_farming/parcel_crop_history_and_plan.csv` | Crop and catch crop per parcel and year, 2012–2026, plus the 2027–2031 plan |
+| `06_nature/catchments.geojson`, `catchments.csv` | Catchment polygons; receiving-water type; ecological status class; retention estimate; P sensitivity; total field area |
+| `06_nature/monitored_catchment_loads.csv` | Outlet P and N loads at 15 stations, 2019–2025 (±10–15 %). These include non-contract farmland and natural background. |
+| `06_nature/origin_state_of_nature_indicative.csv` | Indicative state-of-nature categories for import origins (water stress, deforestation/conversion risk, biodiversity sensitivity, nutrient status) |
+
+The geometries are synthetic. The coordinates are placed in the real sourcing regions, so the same
+pipeline will run on real layers:
+
+* **Finland:** Finnish Food Authority field parcels; SYKE catchments, Corine land cover and Natura 2000 (CC BY 4.0).
+* **Imports:** WRI Aqueduct 4.0 (CC BY 4.0) and GFW tree-cover loss (CC BY 4.0).
+* **Not redistributed, because of their licences:** EXIOBASE, the NHM Biodiversity Intactness Index and IBAT/KBA data.
+
+",e4860f1692198466390b391d7ee075430db6fb109def18324cd2cd2feb278215,package_provided_not_independently_verified,,,,
+E8548c583d923bfc4bce8,nature_action_screen,Field-based nature action screening,"Identify farming areas for expert consideration of soil testing, catch crops, peatland and water-management actions.",screening_only,"Candidates are not prescriptions, validated efficacy estimates or a final priority rank.",unreviewed,package_action_context,The package connects L09-L12 and L24 with nature action.,../docs/NATURE_SBTN.md,Mapping to SBTN steps,24,33,"## Mapping to SBTN steps
+
+| SBTN step | In this dataset |
+|---|---|
+| 1a Materiality screening (ENCORE pressures) | Materials and commodities × pressure categories: land use, water use, nutrient pollution, GHG, pesticides. Note: soy is on SBTN's High Impact Commodity List, and dairy and meat come from cattle. |
+| 1b Value-chain assessment | Volumes by origin from ERP, contract parcels, FLAG emissions |
+| 2 Interpret and prioritise | **Task D1**: pressure × state of nature at catchment level |
+| 3 Targets | Freshwater quality: the limiting nutrient in Finnish lakes is often phosphorus. Land: organic soils and land conversion. |
+| 4–5 Act and track | Levers L09–L12 and L24; monitoring stations |
+
+",e4860f1692198466390b391d7ee075430db6fb109def18324cd2cd2feb278215,package_provided_not_independently_verified,,,,
+E8f2dae9d5c60ac8626c2,nature_action_screen,Field-based nature action screening,"Identify farming areas for expert consideration of soil testing, catch crops, peatland and water-management actions.",screening_only,"Candidates are not prescriptions, validated efficacy estimates or a final priority rank.",unreviewed,package_framework_summary,"Locate, assess and prioritise context; our screening predicates are not validated SBTN methods.",07_frameworks/framework_digest.md,"Nature: SBTN, TNFD, ESRS",37,53,"## Nature: SBTN, TNFD, ESRS
+
+* **SBTN.** Steps: 1 assess (1a materiality screening on ENCORE pressures, 1b value-chain
+  assessment), 2 interpret & prioritise (pressure x state of nature), 3 measure, set and
+  disclose targets (freshwater quantity and quality, land), 4 act, 5 track.  SBTN 2.0 was
+  launched in October 2026 (adds groundwater and pesticides; supplier-engagement targets);
+  V1 methods valid for validation until April 2027.
+* **Freshwater quality.** Nutrient targets focus on the limiting nutrient (often phosphorus in
+  Finnish lakes) at sub-basin level; state-of-nature water layers combine Aqueduct and nutrient
+  models.
+* **TNFD LEAP 2.0** (October 2026): Locate - Evaluate - Assess - Prepare.
+* **ESRS (revised, 2026).**  E1 climate (transition plan, scenario analysis, targets, energy,
+  gross Scope 1/2/3, biogenic CO2 separately, removals), E3 water (consumption in areas of water
+  stress = Aqueduct baseline water stress ""high"" or above, or WEI+ >= 40 %), E4 biodiversity.
+  After the 2026 Omnibus, CSRD scope is > 1,000 employees and > EUR 450 m turnover, so Apetit
+  is expected to report voluntarily (e.g. VSME/GRI) rather than under mandatory ESRS.
+
+",7954f08918ee2189e3d1845511080e2b5d1dc3320eb6e16651a5238fcd387f03,package_provided_not_independently_verified,SBTN Step 1a materiality screening,https://sciencebasedtargetsnetwork.org/companies/take-action/assess/materiality-screening,free to download,not_fetched_or_verified
+E38149cbb7db4f882d598,nature_pressure_state,Catchment nutrient pressure times ecological state,Prioritise farming-area water impacts with delivered P/N and receiving-water sensitivity.,planned_not_implemented,Delivered loads and priority ranks are not calculated yet; mapped area is not a pollution substitute.,unreviewed,challenge_method_definition,Challenge formula requires delivered loads after retention.,../docs/NATURE_SBTN.md,D1 priority formula,34,43,"## D1 priority formula
+
+`priority = (P / median(P) + 0.5 × N / median(N)) × state_weight × p_sensitivity`
+
+* **P and N:** the phosphorus and nitrogen that Apetit-contract parcels deliver to receiving water in 2025 (kg/yr), after delivery from field to water and catchment retention.
+* **state_weight:** good 1.0, moderate 1.2, poor 1.5, bad 1.8.
+* **p_sensitivity:** from `catchments.csv`. It is high for a clear lake in good status that is under protection, because preventing deterioration counts as much as restoring a degraded lake.
+
+The hidden part is the *true* load. Estimate it from parcel attributes, crops, fertilisation, weather
+and the monitored outlet loads. The ranking logic itself is public.
+",e4860f1692198466390b391d7ee075430db6fb109def18324cd2cd2feb278215,package_provided_not_independently_verified,,,,
+E7755801d9c821a0c0034,nature_pressure_state,Catchment nutrient pressure times ecological state,Prioritise farming-area water impacts with delivered P/N and receiving-water sensitivity.,planned_not_implemented,Delivered loads and priority ranks are not calculated yet; mapped area is not a pollution substitute.,unreviewed,package_framework_summary,External source pointer is retained but not fetched or independently verified.,07_frameworks/framework_digest.md,"Nature: SBTN, TNFD, ESRS",37,53,"## Nature: SBTN, TNFD, ESRS
+
+* **SBTN.** Steps: 1 assess (1a materiality screening on ENCORE pressures, 1b value-chain
+  assessment), 2 interpret & prioritise (pressure x state of nature), 3 measure, set and
+  disclose targets (freshwater quantity and quality, land), 4 act, 5 track.  SBTN 2.0 was
+  launched in October 2026 (adds groundwater and pesticides; supplier-engagement targets);
+  V1 methods valid for validation until April 2027.
+* **Freshwater quality.** Nutrient targets focus on the limiting nutrient (often phosphorus in
+  Finnish lakes) at sub-basin level; state-of-nature water layers combine Aqueduct and nutrient
+  models.
+* **TNFD LEAP 2.0** (October 2026): Locate - Evaluate - Assess - Prepare.
+* **ESRS (revised, 2026).**  E1 climate (transition plan, scenario analysis, targets, energy,
+  gross Scope 1/2/3, biogenic CO2 separately, removals), E3 water (consumption in areas of water
+  stress = Aqueduct baseline water stress ""high"" or above, or WEI+ >= 40 %), E4 biodiversity.
+  After the 2026 Omnibus, CSRD scope is > 1,000 employees and > EUR 450 m turnover, so Apetit
+  is expected to report voluntarily (e.g. VSME/GRI) rather than under mandatory ESRS.
+
+",7954f08918ee2189e3d1845511080e2b5d1dc3320eb6e16651a5238fcd387f03,package_provided_not_independently_verified,SBTN Step 2 technical guidance v1.1,https://sciencebasedtargetsnetwork.org/wp-content/uploads/2024/07/Technical-Guidance-2024-Step2-Prioritize-v1-1.pdf,free to download,not_fetched_or_verified
+E15a88c581a8c2eeb8361,nearest_grid,Assumed field weather exposure,Connect farming areas to climate context.,implemented_assumption,Nearest same-region centre is our prototype mapping policy; evidence does not validate this algorithm.,unreviewed,synthetic_data_context,Weather and crop data are simulated.,../docs/SIMULATION_DESIGN.md,Generators,43,70,"## Generators
+
+1. **Weather.**
+   * Periodic-spline climatology per region.
+   * Monthly regime anomalies: the historical years are *inspired by* documented seasons, such as the hot and dry 2018, the drought of 2021, the dry early summer of 2023, the good Finnish pea year of 2026 and the Swedish drought of 2026.
+   * Daily temperature follows an AR(1) process with regional and cell components.
+   * Precipitation uses Markov-chain occurrence with gamma-distributed amounts, shared across the region.
+   * PET uses the Hargreaves formula.
+   * Future years apply monthly deltas that grow with time by SSP. The historical warming trend is part of the same ramp.
+2. **Phenology and soil water.**
+   * Sowing date: the first 5-day period after a crop-specific threshold.
+   * Stages are defined by GDD (base 5 °C).
+   * Bucket soil-water model by soil class, reset on 1 April.
+3. **Yield, the truth model.**
+   * `Ypot × technology trend × farm skill × soil suitability × W(weather) × pests × N response × organic-farming factor × noise`.
+   * W multiplies stage-specific drought stress (reduced by irrigation), heat days in sensitive stages, waterlogging after sowing on clay, rain before harvest and immaturity.
+   * Pests: potato late blight (warm, wet July–August, mitigated by sprays) and pollen beetle on turnip rape (warm May).
+4. **Management.** N, P, diesel, liming events, sprays (responding to blight pressure), adoption of low-carbon fertiliser (from 2023), catch crops and irrigation.
+5. **Footprints.** See METHODOLOGY.md §5.
+6. **Corporate activity.**
+   * Annual plans per site and carrier reproduce the public trajectory: the 2019 purchased steam, the 2020 wind GoOs, Kantvik's own biosteam from 2021, the Säkylä energy system from 2023 and Bjuv from December 2025.
+   * These plans are disaggregated into monthly meters, delivery lots, ERP lines (vessel lots in tonnes, truck lots in kg), shipments by leg, waste transfer notes and so on.
+7. **Raw-feed issues.** Every planted issue is logged with its true and observed value. Legitimate traps, such as credit notes, are not issues.
+8. **Nature.**
+   * Field P and N losses depend on soil-P test, clay, slope, erosion-prone crops, rainfall, buffer strips, catch crops, drainage and N surplus.
+   * Delivery to water decays with distance; then catchment retention applies.
+   * Monitored outlet loads also include non-contract farmland and natural background.
+
+",b926521905269350bc5fab5203912f4a3516f3ee12c6750d7a980859ad2293f3,package_provided_not_independently_verified,,,,
+E51cfe1e09538b813c9d3,nearest_grid,Assumed field weather exposure,Connect farming areas to climate context.,implemented_assumption,Nearest same-region centre is our prototype mapping policy; evidence does not validate this algorithm.,unreviewed,context_only,"Spatial input context, not approval of nearest-centre assignment.",../docs/NATURE_SBTN.md,Data,7,23,"## Data
+
+| File | Content |
+|---|---|
+| `06_nature/parcels.geojson`, `01_master/parcels.csv` | Synthetic parcels with farm, soil class (soil map, ~88 % accurate), clay %, slope, distance to water, drainage, latest soil-P test (18 % missing), buffer strip and catchment |
+| `03_farming/parcel_crop_history_and_plan.csv` | Crop and catch crop per parcel and year, 2012–2026, plus the 2027–2031 plan |
+| `06_nature/catchments.geojson`, `catchments.csv` | Catchment polygons; receiving-water type; ecological status class; retention estimate; P sensitivity; total field area |
+| `06_nature/monitored_catchment_loads.csv` | Outlet P and N loads at 15 stations, 2019–2025 (±10–15 %). These include non-contract farmland and natural background. |
+| `06_nature/origin_state_of_nature_indicative.csv` | Indicative state-of-nature categories for import origins (water stress, deforestation/conversion risk, biodiversity sensitivity, nutrient status) |
+
+The geometries are synthetic. The coordinates are placed in the real sourcing regions, so the same
+pipeline will run on real layers:
+
+* **Finland:** Finnish Food Authority field parcels; SYKE catchments, Corine land cover and Natura 2000 (CC BY 4.0).
+* **Imports:** WRI Aqueduct 4.0 (CC BY 4.0) and GFW tree-cover loss (CC BY 4.0).
+* **Not redistributed, because of their licences:** EXIOBASE, the NHM Biodiversity Intactness Index and IBAT/KBA data.
+
+",e4860f1692198466390b391d7ee075430db6fb109def18324cd2cd2feb278215,package_provided_not_independently_verified,,,,
+E08cee92047d63e7358ff,organisational_context,Dated sourcing and organisational context,Interpret what acquisition and operating dates can explain about source coverage.,context_only,No automatic historical row exclusion or base-year recalculation.,unreviewed,package_boundary_context,Foodhills timing and future structural changes are distinct.,../docs/METHODOLOGY.md,1. Organisational boundary and structural changes,10,19,"## 1. Organisational boundary and structural changes
+
+* **Consolidation:** operational control.
+* **Grain trade, divested 31 May 2022.** It appears in the published history (`05_scenarios/published_inventory_history.csv`) but is not in the activity data and is outside the canonical 2021–2025 inventory. That inventory covers continuing operations only, so base-year recalculation is part of task B.
+* **Foodhills (Bjuv, Sweden), acquired 27 Nov 2025.**
+  * Its own operations are included from December 2025.
+  * Its pea growers delivered before the acquisition, so Swedish farm emissions are **not** in the 2025 inventory. They are in full from 2026.
+  * Because of the acquisition, a base-year recalculation is needed.
+* **Pudasjärvi (closure decided 2026) and the sale of the Kantvik biosteam plant (closing early 2027)** are future structural changes. They belong in pathway modelling (task B), not in the 2025 inventory.
+
+",ca55ac4ddc1f39b1b7136abdbb7417af4448685fe0f95559ce19e5a827c0b243,package_provided_not_independently_verified,,,,
+E0352efa79c03f200f49e,quality_detection,Review-candidate detection,Identify uncertain inputs before nature decisions.,implemented_heuristics,"Versioned thresholds are prototype policies, not SBTN requirements or confirmed truth.",unreviewed,package_context,The package intentionally contains errors and legitimate unusual records.,../docs/SIMULATION_DESIGN.md,Generators,43,70,"## Generators
+
+1. **Weather.**
+   * Periodic-spline climatology per region.
+   * Monthly regime anomalies: the historical years are *inspired by* documented seasons, such as the hot and dry 2018, the drought of 2021, the dry early summer of 2023, the good Finnish pea year of 2026 and the Swedish drought of 2026.
+   * Daily temperature follows an AR(1) process with regional and cell components.
+   * Precipitation uses Markov-chain occurrence with gamma-distributed amounts, shared across the region.
+   * PET uses the Hargreaves formula.
+   * Future years apply monthly deltas that grow with time by SSP. The historical warming trend is part of the same ramp.
+2. **Phenology and soil water.**
+   * Sowing date: the first 5-day period after a crop-specific threshold.
+   * Stages are defined by GDD (base 5 °C).
+   * Bucket soil-water model by soil class, reset on 1 April.
+3. **Yield, the truth model.**
+   * `Ypot × technology trend × farm skill × soil suitability × W(weather) × pests × N response × organic-farming factor × noise`.
+   * W multiplies stage-specific drought stress (reduced by irrigation), heat days in sensitive stages, waterlogging after sowing on clay, rain before harvest and immaturity.
+   * Pests: potato late blight (warm, wet July–August, mitigated by sprays) and pollen beetle on turnip rape (warm May).
+4. **Management.** N, P, diesel, liming events, sprays (responding to blight pressure), adoption of low-carbon fertiliser (from 2023), catch crops and irrigation.
+5. **Footprints.** See METHODOLOGY.md §5.
+6. **Corporate activity.**
+   * Annual plans per site and carrier reproduce the public trajectory: the 2019 purchased steam, the 2020 wind GoOs, Kantvik's own biosteam from 2021, the Säkylä energy system from 2023 and Bjuv from December 2025.
+   * These plans are disaggregated into monthly meters, delivery lots, ERP lines (vessel lots in tonnes, truck lots in kg), shipments by leg, waste transfer notes and so on.
+7. **Raw-feed issues.** Every planted issue is logged with its true and observed value. Legitimate traps, such as credit notes, are not issues.
+8. **Nature.**
+   * Field P and N losses depend on soil-P test, clay, slope, erosion-prone crops, rainfall, buffer strips, catch crops, drainage and N surplus.
+   * Delivery to water decays with distance; then catchment retention applies.
+   * Monitored outlet loads also include non-contract farmland and natural background.
+
+",b926521905269350bc5fab5203912f4a3516f3ee12c6750d7a980859ad2293f3,package_provided_not_independently_verified,,,,
+E4360d80a6f0158b08ffe,transition_context,Illustrative transition and physical scenario link,Keep future action discussions linked to explicit economic assumptions and physical proxies.,context_only,"Proxy mapping is not scenario equivalence, interpolation or a quantified business-risk result.",unreviewed,package_scenario_summary,Values are illustrative package assumptions; official source has not been fetched.,07_frameworks/framework_digest.md,Scenarios,65,74,"## Scenarios
+
+* **NGFS Phase V** (November 2024; usability notes November 2025): Net Zero 2050, Below 2 C,
+  Low Demand, Delayed Transition, Fragmented World, NDCs, Current Policies.  This dataset ships
+  illustrative carbon-price paths in the NGFS ranges; pull official values from the IIASA NGFS
+  explorer (variable Price|Carbon) for production use.
+* **Physical climate (Finland).** FMI CMIP6 projections (Ruosteenoja & Jylhä 2021): by
+  2040-2069 vs 1981-2010, Finland warms +2.3 / +2.7 / +3.6 C (SSP1-2.6 / 2-4.5 / 5-8.5), summer
+  +2.1 / +2.4 / +3.2 C; summer precipitation in the south changes little, so early-summer
+  drought risk increases with higher evaporation; heavy-rain intensity increases.
+",7954f08918ee2189e3d1845511080e2b5d1dc3320eb6e16651a5238fcd387f03,package_provided_not_independently_verified,NGFS scenarios portal,https://www.ngfs.net/ngfs-scenarios-portal/,NGFS data licence (check before commercial use),not_fetched_or_verified

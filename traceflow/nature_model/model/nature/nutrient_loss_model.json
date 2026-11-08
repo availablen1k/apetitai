@@ -1,0 +1,39 @@
+{
+  "model_id": "screening_export_coefficient",
+  "version": "0.1.0",
+  "review_state": "uncalibrated_unreviewed",
+  "weather_scenario": "historical",
+  "normal_years": [1991, 2020],
+  "base_field_loss_kg_ha_year": {"P": 1.1, "N": 15.0},
+  "base_rate_evidence": "dataset/docs/SIMULATION_DESIGN.md: Calibration targets and sources; package reference values, not independently verified field calibration",
+  "assumed_parameters": {
+    "soil_p_reference_mg_l": 15.0,
+    "n_application_reference_kg_ha": 100.0,
+    "source_factor_intercept": 0.5,
+    "source_factor_weight": 0.5,
+    "source_factor_bounds": [0.5, 2.0],
+    "slope_weight_per_pct": 0.03,
+    "clay_weight_per_pct": 0.003,
+    "reference_slope_pct": 2.0,
+    "reference_clay_pct": 30.0,
+    "p_root_crop_factor": 1.2,
+    "root_crops": ["potato", "carrot"]
+  },
+  "stress_cases": {
+    "low": {"field_loss_scale": 0.5, "delivery_length_m": 300.0, "retention_delta": 0.1, "organic_n_factor": 1.0},
+    "central": {"field_loss_scale": 1.0, "delivery_length_m": 1000.0, "retention_delta": 0.0, "organic_n_factor": 1.5},
+    "high": {"field_loss_scale": 1.5, "delivery_length_m": 3000.0, "retention_delta": -0.1, "organic_n_factor": 2.0}
+  },
+  "input_points": ["donor_lower", "central", "donor_upper"],
+  "primary_input_variant": "country_peers",
+  "scope_variants": ["registry_selected", "registry_plus_unknown"],
+  "unused_inputs": ["p_kg_ha", "yield_t_ha", "buffer_strip", "catch_crop", "drainage"],
+  "limitations": [
+    "All numeric modifiers, delivery lengths and stress ranges are explicit prototype assumptions, not fitted or literature-derived coefficients",
+    "Annual precipitation ratio is not runoff and omits timing and snowmelt processes",
+    "N application intensity is not N surplus; no crop nutrient-removal or fixation model is claimed",
+    "No quantified buffer, catch-crop or drainage effects are assigned",
+    "Stress ranges and donor spread are not calibrated probability intervals",
+    "No monitoring, public development loads or hidden truth were used for calibration"
+  ]
+}

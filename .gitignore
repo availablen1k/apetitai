@@ -1,0 +1,36 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+.next/
+dist/
+build/
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+.vscode/
+.idea/
+
+# Challenge data package (66 MB). The nature model and TraceFlow read it from this folder;
+# get it from the challenge organisers or set APETIT_DATA_DIR.
+/APETIT_CLIMATE_NATURE_NAVIGATOR_2026/
+
+# Model-package build outputs are excluded by traceflow/nature_model/.gitignore;
+# TraceFlow data, uploads and its database by traceflow/.gitignore.
+
+# Local backups and stray output, not part of the app
+/other project/
+/hared database snapshot"

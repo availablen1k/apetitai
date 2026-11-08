@@ -1,0 +1,46 @@
+import { useEffect, useRef, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { Loader2, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { api } from '@/api/client';
+import { useI18n } from '@/lib/i18n';
+import { datasetName, priorityName } from '@/lib/reviewLanguage';
+import FlowDiagram from '@/components/sustainability/FlowDiagram';
+import StatusPill from '@/components/StatusPill';
+import RootCauseButton from '@/components/assistant/RootCauseButton';
+
+const COLORS = { critical: '#BA1744', high: '#E97856', medium: '#D9A21B', low: '#8D9E94' };
+export default function IncidentFlow({ filters, onFilter, onOpen }) {
+  const { lang } = useI18n(); const fi = lang === 'fi';
+  const [focus, setFocus] = useState(null), [offset, setOffset] = useState(0), [recordsOpen, setRecordsOpen] = useState(false);
+  const records = useRef(null);
+  const signature = JSON.stringify(filters);
+  useEffect(() => {setFocus(null);setOffset(0);setRecordsOpen(false);}, [signature]);
+  const filter = Object.fromEntries(Object.entries(filters).filter(([key,value]) => key !== 'severity' && value !== '' && value != null));
+  const query = useQuery({queryKey:['incident-flow',filter,focus,offset],queryFn:()=>api.incidentFlow({...filter,focus,offset,limit:10}),placeholderData:(previous)=>previous,refetchInterval:5000});
+  const data = query.data;
+  const graph = data && { ...data.graph, nodes: data.graph.nodes.map((node) => ({...node,
+    yearly: node.yearly.filter((year)=>year.value > 0),
+    order: node.kind === 'scope' ? ['critical','high','medium','low'].indexOf(node.id.replace('criticality:','')) : undefined,
+    label: node.kind === 'group' && node.id.startsWith('dataset:') ? {...node.label,fi:datasetName(node.id.slice(8),'fi')} : node.label,
+    members: node.members.map((m)=>m.id.startsWith('dataset:') ? {...m,label:{...m.label,fi:datasetName(m.id.slice(8),'fi')}} : m),
+  })), links: data.graph.links.map((link)=>({...link,yearly:link.yearly.filter((year)=>year.value > 0)})) };
+  const format = (value) => new Intl.NumberFormat(fi ? 'fi-FI' : 'en-GB',{maximumFractionDigits:0}).format(value);
+  const explore = ({kind,id,node_id}) => {
+    setFocus(null); setOffset(0);
+    if(kind==='scope') onFilter({criticality:id.replace('criticality:','')});
+    else if(kind==='group') onFilter({table:id.replace('dataset:',''),rule_id:''});
+    else onFilter({rule_id:id.replace('rule:',''),table:node_id.startsWith('dataset:') && node_id.includes('|') ? node_id.split('|')[0].slice(8) : filters.table});
+  };
+  return <section className="surface mb-5 overflow-hidden" data-testid="incident-flow" data-ai-incidents={JSON.stringify(filter)} aria-busy={query.isFetching}>
+    <div className="flex flex-wrap items-start justify-between gap-3 border-b border-border p-5"><div><h2 className="font-heading text-[23px] text-[#213F51]">{fi ? 'Miten havainnot liittyvät toisiinsa' : 'How incidents connect'}</h2><p className="mt-1 max-w-2xl text-[12px] leading-relaxed text-muted-foreground">{fi ? 'Lähdeaineisto → havaintotyyppi → kriittisyys. Leveämpi virta tarkoittaa enemmän havaintoja.' : 'Source dataset → incident type → criticality. Wider flows mean more incidents.'}</p></div><p className="text-[24px] font-semibold tabular-nums text-[#1B4968]" data-testid="incident-total">{data ? format(data.total) : '—'} <span className="text-[11px] font-normal text-muted-foreground">{fi ? 'havaintoa valinnassa' : 'incidents selected'}</span></p></div>
+    <div className="space-y-4 p-4 sm:p-5">
+      <div className="flex flex-wrap gap-2" role="group" aria-label={fi ? 'Havaintojen kriittisyys' : 'Incident criticality'}><button onClick={()=>onFilter({criticality:''})} aria-pressed={!filters.criticality} className={`rounded-xl border px-3 py-2 text-[12px] ${!filters.criticality ? 'border-[#1B4968] bg-[#1B4968] text-white' : 'border-border hover:bg-muted'}`} data-testid="incident-level-all">{fi ? 'Kaikki kriittisyydet' : 'All criticalities'}</button>{(data?.counts || ['critical','high','medium','low'].map(level=>({level,count:0}))).map((item)=><button key={item.level} onClick={()=>onFilter({criticality:filters.criticality===item.level?'':item.level})} aria-pressed={filters.criticality===item.level} data-testid={`incident-level-${item.level}`} className={`inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-[12px] ${filters.criticality===item.level?'border-[#365B73] bg-[#EAF2F7] font-semibold':'border-border hover:bg-muted'}`}><span className="h-2.5 w-2.5 rounded-sm" style={{backgroundColor:COLORS[item.level]}} />{priorityName(item.level,lang)}<span className="tabular-nums text-muted-foreground">{format(item.count)}</span></button>)}</div>
+      {(filters.table || filters.rule_id) && <button onClick={()=>onFilter({table:'',rule_id:''})} className="text-[12px] font-medium text-[#2E7099]" data-testid="incident-reset-exploration">{fi ? 'Takaisin kaikkiin lähteisiin' : 'Back to all sources'} →</button>}
+      {query.error && <p role="alert" className="text-[12px] text-[#8C3B2E]">{query.error.message}</p>}
+      {query.isLoading && <p role="status" className="flex items-center gap-2 text-[12px] text-muted-foreground"><Loader2 className="h-4 w-4 animate-spin" />{fi ? 'Yhdistetään havaintoja…' : 'Connecting incidents…'}</p>}
+      {graph?.nodes.length ? <FlowDiagram graph={graph} lang={lang} format={format} variant="incidents" focus={focus} onFocus={(id)=>{setFocus(id);setOffset(0);setRecordsOpen(false);}} onExplore={explore} onRecords={()=>{setRecordsOpen(true);setTimeout(()=>records.current?.scrollIntoView({behavior:'smooth',block:'nearest'}),0);}} /> : data && <p className="rounded-xl border border-dashed border-border p-6 text-center text-[12px] text-muted-foreground" data-testid="incident-flow-empty">{fi ? 'Valinnassa ei ole havaintoja. Muuta suodattimia tai tarkista tuodut tiedot.' : 'No incidents match this selection. Adjust the filters or check the imported data.'}</p>}
+      {data && <details ref={records} open={recordsOpen} onToggle={(e)=>setRecordsOpen(e.currentTarget.open)} className="rounded-xl border border-border" data-testid="incident-flow-records"><summary className="cursor-pointer px-4 py-3 text-[12px] font-medium">{fi ? 'Valinnan havainnot' : 'Incidents in this selection'} ({data.records.total})</summary><ul className="border-t border-border">{data.records.rows.map((issue)=><li key={issue.id} className="space-y-2 border-b border-border/60 p-3 last:border-0" data-ai-context={JSON.stringify({issue_id:issue.id,year:issue.year,label:issue.type_label[lang]})}><div className="flex flex-wrap items-center gap-2"><StatusPill tone={issue.criticality}>{priorityName(issue.criticality,lang)}</StatusPill><span className="text-[12px] font-medium">{issue.type_label[lang]}</span></div><p className="text-[11px] text-muted-foreground">{datasetName(issue.table_name,lang)} · {issue.record_key}{issue.year ? ` · ${issue.year}`:''}</p><div className="flex flex-wrap items-center gap-2"><RootCauseButton issue={issue} /><button onClick={()=>onOpen(issue.id)} className="inline-flex items-center gap-1 text-[11.5px] font-medium text-[#2E7099]">{fi ? 'Tarkista havainto' : 'Review incident'}<ArrowRight className="h-3 w-3" /></button>{issue.discoveries.length>0 && <span className="text-[10px] text-muted-foreground">{fi ? 'Liittyy löydöksiin' : 'Linked to discoveries'}</span>}</div></li>)}</ul>{data.records.total>10 && <div className="flex items-center justify-between gap-3 border-t border-border p-3 text-[11px]"><button disabled={!offset} onClick={()=>setOffset(Math.max(0,offset-10))} className="rounded-lg border border-border p-2 disabled:opacity-30" aria-label={fi?'Edelliset havainnot':'Previous incidents'}><ChevronLeft className="h-3.5 w-3.5" /></button><span>{offset+1}–{Math.min(offset+10,data.records.total)} / {data.records.total}</span><button disabled={offset+10>=data.records.total} onClick={()=>setOffset(offset+10)} className="rounded-lg border border-border p-2 disabled:opacity-30" aria-label={fi?'Seuraavat havainnot':'Next incidents'}><ChevronRight className="h-3.5 w-3.5" /></button></div>}</details>}
+      <details className="text-[10.5px] leading-relaxed text-muted-foreground"><summary className="cursor-pointer font-medium">{fi ? 'Mitä kriittisyys ja yhteydet tarkoittavat?' : 'What do criticality and these connections mean?'}</summary><p className="mt-2">{fi ? 'Kriittinen yhdistää korkean vakavuuden ja suuren mahdollisen vaikutuksen. Muut tasot seuraavat tallennettua vakavuutta. Kriittisyys ohjaa tarkistusta; havainto ei vielä todista virhettä. Säännöt, tietoagentti ja löydökset yhdistetään samaan havaintoon ilman kaksoislaskentaa.' : 'Critical combines high severity with high potential impact. Other levels follow the recorded severity. Criticality guides review; a finding is not proof of an error. Rules, data-review agents and discoveries link to the same canonical incident without double counting.'}</p>{data && <p className="mt-2">{data.discovery.linked_incidents} {fi?'havaintoa liittyy tallennettuihin löydöksiin.':'incidents are linked to saved discoveries.'} {data.undated>0 ? `${data.undated} ${fi?'havaintoa ilman vuotta lasketaan kerran.':'undated incidents are counted once.'}`:''}</p>}</details>
+    </div>
+  </section>;
+}

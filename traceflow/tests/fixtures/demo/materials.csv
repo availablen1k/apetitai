@@ -1,0 +1,4 @@
+material_id,erp_name,name_en,material_group,base_uom,default_ef_id,receiving_site,origin_countries,eudr_commodity,sbtn_high_impact_commodity
+M104,Rypsi tuonti (DEMO),Rapeseed import (DEMO),oilseed,kg,EF-DEMO-RAPESEED,S-DEMO-B,LT,False,False
+M120,Herne ostettu (DEMO),Peas bought (DEMO),vegetable_bought,kg,EF-DEMO-PEA,S-DEMO-A,FI,False,False
+M900,Palvelut (DEMO),Services (DEMO),service,EUR,EF-DEMO-SERVICE,S-DEMO-A,FI,False,False

@@ -1,0 +1,41 @@
+{
+  "fields": 179,
+  "field_loss_records": 9666,
+  "summary_rows": 108,
+  "foreign_keys": "passed",
+  "integrity": "passed",
+  "field_mass_reconciliation": "passed",
+  "catchment_reconciliation": "passed",
+  "population": "passed",
+  "unknown_totals": "passed",
+  "scientific_validation": "not_performed",
+  "ranking": "not_implemented",
+  "year": 2025,
+  "catchment_id": "CA01",
+  "model_version": "0.1.0",
+  "input_policy_version": "0.2.0",
+  "weather_scenario": "historical",
+  "scientific_status": "uncalibrated_unreviewed",
+  "base_modified": false,
+  "inputs_modified": false,
+  "verification_date": "2026-11-07",
+  "checks": {
+    "full_test_suite": {
+      "passed": true,
+      "tests_run": 80,
+      "command": "python3 -m unittest discover -s tools -p 'test_*.py'"
+    },
+    "final_focused_tests": {
+      "passed": true,
+      "tests_run": 9,
+      "command": "python3 -m unittest discover -s tools -p 'test_nutrient_losses.py'"
+    },
+    "model_code_config_input_and_document_hashes_verified": true,
+    "unused_se_proxy_has_no_effect": true,
+    "tracked_field_export_reconciles_with_summary": true
+  },
+  "snapshot_exports": {
+    "nutrient_loss_pilot_fields.csv": "selected scope only: 107 fields, both nutrients, country_peers/central donor point/central method case (214 rows); enriched with explicit catchment/selection/policy columns",
+    "nutrient_loss_pilot_summary.csv": "all scopes/input variants/donor points/method cases"
+  }
+}

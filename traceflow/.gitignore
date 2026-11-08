@@ -1,0 +1,45 @@
+# env (secrets stay local; the example file is tracked)
+.env
+.env.*
+!.env.example
+
+# Local data: SQLite database, uploaded originals, generated reports
+/data/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+
+# Earlier-project scratch: the parquet duplicates the tracked challenge package file and
+# agg_all.json is unused. tmp/region_rows.json stays tracked (npm run setup loads it).
+/tmp/weather_daily_1991_2060.parquet
+/tmp/agg_all.json
+
+# Logs
+/logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Test output
+/test-results/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.vite

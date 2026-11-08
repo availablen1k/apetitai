@@ -1,0 +1,861 @@
+{
+  "scope": "Raw-data exploration; no cleaning, nutrient estimation or ranking.",
+  "tables": {
+    "farm_survey_fi": {
+      "rows": 3437,
+      "candidate_key": [
+        "survey_id"
+      ],
+      "duplicate_key_rows": 0,
+      "rows_by_year": {
+        "2012": 160,
+        "2013": 174,
+        "2014": 176,
+        "2015": 162,
+        "2016": 166,
+        "2017": 171,
+        "2018": 173,
+        "2019": 278,
+        "2020": 281,
+        "2021": 272,
+        "2022": 296,
+        "2023": 288,
+        "2024": 285,
+        "2025": 283,
+        "2026": 272
+      },
+      "columns": {
+        "survey_id": {
+          "missing": 0,
+          "distinct": 3437
+        },
+        "farm_id": {
+          "missing": 0,
+          "distinct": 357
+        },
+        "crop": {
+          "missing": 0,
+          "distinct": 5,
+          "values": {
+            "carrot": 95,
+            "pea": 1043,
+            "potato": 136,
+            "spinach": 152,
+            "turnip_rape": 2011
+          }
+        },
+        "year": {
+          "missing": 0,
+          "distinct": 15,
+          "values": {
+            "2012": 160,
+            "2013": 174,
+            "2014": 176,
+            "2015": 162,
+            "2016": 166,
+            "2017": 171,
+            "2018": 173,
+            "2019": 278,
+            "2020": 281,
+            "2021": 272,
+            "2022": 296,
+            "2023": 288,
+            "2024": 285,
+            "2025": 283,
+            "2026": 272
+          },
+          "numeric_min": 2012.0,
+          "numeric_max": 2026.0
+        },
+        "area_ha": {
+          "missing": 0,
+          "distinct": 1935,
+          "numeric_min": 1.02,
+          "numeric_max": 123.07
+        },
+        "soil_type_reported": {
+          "missing": 0,
+          "distinct": 2,
+          "values": {
+            "Mineral soil": 3359,
+            "Organic soil": 78
+          }
+        },
+        "n_mineral_kg_ha": {
+          "missing": 0,
+          "distinct": 907,
+          "numeric_min": 0.0,
+          "numeric_max": 1503.0
+        },
+        "n_manure_kg_ha": {
+          "missing": 0,
+          "distinct": 19,
+          "values": {
+            "0.0": 3236,
+            "13.8": 72,
+            "28.9": 1,
+            "37.0": 1,
+            "40.6": 1,
+            "43.2": 1,
+            "44.9": 1,
+            "46.6": 1,
+            "46.8": 1,
+            "47.7": 1,
+            "48.5": 1,
+            "51.4": 1,
+            "52.2": 23,
+            "52.3": 80,
+            "54.7": 1,
+            "55.0": 5,
+            "55.7": 1,
+            "68.7": 1,
+            "71.5": 8
+          },
+          "numeric_min": 0.0,
+          "numeric_max": 71.5
+        },
+        "fertiliser_product": {
+          "missing": 0,
+          "distinct": 5,
+          "values": {
+            "AN 27-0-0": 809,
+            "AN low-carbon (green ammonia)": 322,
+            "CAN 27": 766,
+            "NPK 20-3-8": 759,
+            "NPK 22-6-12": 781
+          }
+        },
+        "p_kg_ha": {
+          "missing": 0,
+          "distinct": 296,
+          "numeric_min": 5.1,
+          "numeric_max": 50.0
+        },
+        "diesel_l_ha": {
+          "missing": 0,
+          "distinct": 858,
+          "numeric_min": 46.3,
+          "numeric_max": 271.2
+        },
+        "lime_t_ha": {
+          "missing": 0,
+          "distinct": 314,
+          "numeric_min": 0.0,
+          "numeric_max": 4.33
+        },
+        "sprays": {
+          "missing": 0,
+          "distinct": 89,
+          "numeric_min": 0.0,
+          "numeric_max": 10.7
+        },
+        "irrigated": {
+          "missing": 0,
+          "distinct": 2,
+          "values": {
+            "False": 3224,
+            "True": 213
+          }
+        },
+        "catch_crop_share": {
+          "missing": 0,
+          "distinct": 94,
+          "numeric_min": 0.0,
+          "numeric_max": 1.0
+        },
+        "yield_t_ha": {
+          "missing": 0,
+          "distinct": 800,
+          "numeric_min": 0.44,
+          "numeric_max": 369.5
+        }
+      }
+    },
+    "foodhills_odlingsdata_se": {
+      "rows": 2683,
+      "candidate_key": [
+        "odlar_id",
+        "gröda",
+        "skördeår"
+      ],
+      "duplicate_key_rows": 0,
+      "rows_by_year": {
+        "2018": 300,
+        "2019": 300,
+        "2020": 298,
+        "2021": 291,
+        "2022": 300,
+        "2023": 300,
+        "2024": 300,
+        "2025": 298,
+        "2026": 296
+      },
+      "columns": {
+        "odlar_id": {
+          "missing": 0,
+          "distinct": 300
+        },
+        "skördeår": {
+          "missing": 0,
+          "distinct": 9,
+          "values": {
+            "2018": 300,
+            "2019": 300,
+            "2020": 298,
+            "2021": 291,
+            "2022": 300,
+            "2023": 300,
+            "2024": 300,
+            "2025": 298,
+            "2026": 296
+          },
+          "numeric_min": 2018.0,
+          "numeric_max": 2026.0
+        },
+        "gröda": {
+          "missing": 0,
+          "distinct": 1,
+          "values": {
+            "Ärt (frysärt)": 2683
+          }
+        },
+        "areal_ha": {
+          "missing": 0,
+          "distinct": 1591,
+          "numeric_min": 0.9,
+          "numeric_max": 57.45
+        },
+        "levererad_mängd_ton": {
+          "missing": 0,
+          "distinct": 2313,
+          "numeric_min": 1.51,
+          "numeric_max": 228.61
+        },
+        "kvävegiva_kg_ha": {
+          "missing": 0,
+          "distinct": 22,
+          "numeric_min": 0.0,
+          "numeric_max": 36.0
+        },
+        "diesel_l_ha": {
+          "missing": 0,
+          "distinct": 70,
+          "numeric_min": 51.0,
+          "numeric_max": 137.0
+        },
+        "bevattnad": {
+          "missing": 0,
+          "distinct": 2,
+          "values": {
+            "ja": 836,
+            "nej": 1847
+          }
+        }
+      }
+    },
+    "parcel_crop_history_and_plan": {
+      "rows": 284260,
+      "candidate_key": [
+        "parcel_id",
+        "year"
+      ],
+      "duplicate_key_rows": 0,
+      "rows_by_year": {
+        "2012": 14213,
+        "2013": 14213,
+        "2014": 14213,
+        "2015": 14213,
+        "2016": 14213,
+        "2017": 14213,
+        "2018": 14213,
+        "2019": 14213,
+        "2020": 14213,
+        "2021": 14213,
+        "2022": 14213,
+        "2023": 14213,
+        "2024": 14213,
+        "2025": 14213,
+        "2026": 14213,
+        "2027": 14213,
+        "2028": 14213,
+        "2029": 14213,
+        "2030": 14213,
+        "2031": 14213
+      },
+      "columns": {
+        "parcel_id": {
+          "missing": 0,
+          "distinct": 14213
+        },
+        "farm_id": {
+          "missing": 0,
+          "distinct": 680
+        },
+        "year": {
+          "missing": 0,
+          "distinct": 20,
+          "values": {
+            "2012": 14213,
+            "2013": 14213,
+            "2014": 14213,
+            "2015": 14213,
+            "2016": 14213,
+            "2017": 14213,
+            "2018": 14213,
+            "2019": 14213,
+            "2020": 14213,
+            "2021": 14213,
+            "2022": 14213,
+            "2023": 14213,
+            "2024": 14213,
+            "2025": 14213,
+            "2026": 14213,
+            "2027": 14213,
+            "2028": 14213,
+            "2029": 14213,
+            "2030": 14213,
+            "2031": 14213
+          },
+          "numeric_min": 2012.0,
+          "numeric_max": 2031.0
+        },
+        "crop": {
+          "missing": 0,
+          "distinct": 10,
+          "values": {
+            "barley": 80910,
+            "carrot": 775,
+            "fallow": 18551,
+            "grass_ley": 33551,
+            "oats": 28625,
+            "pea": 26400,
+            "potato": 1197,
+            "spinach": 1221,
+            "turnip_rape": 18808,
+            "wheat": 74222
+          }
+        },
+        "catch_crop": {
+          "missing": 0,
+          "distinct": 2,
+          "values": {
+            "False": 222647,
+            "True": 61613
+          }
+        },
+        "status": {
+          "missing": 0,
+          "distinct": 2,
+          "values": {
+            "declared": 213195,
+            "planned": 71065
+          }
+        }
+      }
+    },
+    "current_calculator_footprints": {
+      "rows": 3437,
+      "candidate_key": [
+        "farm_id",
+        "crop",
+        "year"
+      ],
+      "duplicate_key_rows": 0,
+      "rows_by_year": {
+        "2012": 160,
+        "2013": 174,
+        "2014": 176,
+        "2015": 162,
+        "2016": 166,
+        "2017": 171,
+        "2018": 173,
+        "2019": 278,
+        "2020": 281,
+        "2021": 272,
+        "2022": 296,
+        "2023": 288,
+        "2024": 285,
+        "2025": 283,
+        "2026": 272
+      },
+      "columns": {
+        "farm_id": {
+          "missing": 0,
+          "distinct": 357
+        },
+        "crop": {
+          "missing": 0,
+          "distinct": 5,
+          "values": {
+            "carrot": 95,
+            "pea": 1043,
+            "potato": 136,
+            "spinach": 152,
+            "turnip_rape": 2011
+          }
+        },
+        "year": {
+          "missing": 0,
+          "distinct": 15,
+          "values": {
+            "2012": 160,
+            "2013": 174,
+            "2014": 176,
+            "2015": 162,
+            "2016": 166,
+            "2017": 171,
+            "2018": 173,
+            "2019": 278,
+            "2020": 281,
+            "2021": 272,
+            "2022": 296,
+            "2023": 288,
+            "2024": 285,
+            "2025": 283,
+            "2026": 272
+          },
+          "numeric_min": 2012.0,
+          "numeric_max": 2026.0
+        },
+        "carbon_footprint_kgco2e_per_kg": {
+          "missing": 0,
+          "distinct": 257,
+          "numeric_min": 0.02,
+          "numeric_max": 3.71
+        },
+        "calculator_note": {
+          "missing": 0,
+          "distinct": 1,
+          "values": {
+            "current calculator: mineral soil assumed, excludes land-use change and organic-soil emissions": 3437
+          }
+        }
+      }
+    }
+  },
+  "relationships": {
+    "survey_duplicate_farm_crop_year_rows": 0,
+    "history_unknown_farm_rows": 0,
+    "history_unknown_parcel_rows": 0,
+    "history_farm_parcel_owner_mismatch_rows": 0,
+    "survey_unknown_farm_rows": 0,
+    "swedish_unknown_farm_rows": 0,
+    "parcel_unknown_catchment_rows": 0,
+    "survey_keys_without_history": 0,
+    "swedish_keys_without_history": 0,
+    "footprint_keys_without_survey": 0,
+    "survey_keys_without_footprint": 0,
+    "farms_spanning_multiple_catchments": 248
+  },
+  "contract_crop_selection": "Provisional: history.crop in farm_registry.contract_crops for that farm; static registry, not proof of annual delivery.",
+  "contract_crop_coverage_by_year": {
+    "2012": {
+      "FI": {
+        "contract_farm_crop_year_groups": 393,
+        "groups_with_observation": 160,
+        "parcel_area_ha": 8282.96,
+        "parcel_area_with_observation_ha": 3450.61
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 300,
+        "groups_with_observation": 0,
+        "parcel_area_ha": 4956.94,
+        "parcel_area_with_observation_ha": 0
+      }
+    },
+    "2013": {
+      "FI": {
+        "contract_farm_crop_year_groups": 393,
+        "groups_with_observation": 174,
+        "parcel_area_ha": 8257.76,
+        "parcel_area_with_observation_ha": 3893.27
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 300,
+        "groups_with_observation": 0,
+        "parcel_area_ha": 5108.13,
+        "parcel_area_with_observation_ha": 0
+      }
+    },
+    "2014": {
+      "FI": {
+        "contract_farm_crop_year_groups": 390,
+        "groups_with_observation": 176,
+        "parcel_area_ha": 8163.51,
+        "parcel_area_with_observation_ha": 3628.53
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 300,
+        "groups_with_observation": 0,
+        "parcel_area_ha": 5272.97,
+        "parcel_area_with_observation_ha": 0
+      }
+    },
+    "2015": {
+      "FI": {
+        "contract_farm_crop_year_groups": 361,
+        "groups_with_observation": 162,
+        "parcel_area_ha": 7128.55,
+        "parcel_area_with_observation_ha": 3152.17
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 297,
+        "groups_with_observation": 0,
+        "parcel_area_ha": 5049.41,
+        "parcel_area_with_observation_ha": 0
+      }
+    },
+    "2016": {
+      "FI": {
+        "contract_farm_crop_year_groups": 365,
+        "groups_with_observation": 166,
+        "parcel_area_ha": 7303.29,
+        "parcel_area_with_observation_ha": 3289.64
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 280,
+        "groups_with_observation": 0,
+        "parcel_area_ha": 4374.57,
+        "parcel_area_with_observation_ha": 0
+      }
+    },
+    "2017": {
+      "FI": {
+        "contract_farm_crop_year_groups": 393,
+        "groups_with_observation": 171,
+        "parcel_area_ha": 8117.83,
+        "parcel_area_with_observation_ha": 3694.87
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 300,
+        "groups_with_observation": 0,
+        "parcel_area_ha": 4877.37,
+        "parcel_area_with_observation_ha": 0
+      }
+    },
+    "2018": {
+      "FI": {
+        "contract_farm_crop_year_groups": 390,
+        "groups_with_observation": 173,
+        "parcel_area_ha": 8054.88,
+        "parcel_area_with_observation_ha": 3626.53
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 300,
+        "groups_with_observation": 300,
+        "parcel_area_ha": 4883.23,
+        "parcel_area_with_observation_ha": 4883.23
+      }
+    },
+    "2019": {
+      "FI": {
+        "contract_farm_crop_year_groups": 372,
+        "groups_with_observation": 278,
+        "parcel_area_ha": 7487.32,
+        "parcel_area_with_observation_ha": 5532.42
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 300,
+        "groups_with_observation": 300,
+        "parcel_area_ha": 5061.97,
+        "parcel_area_with_observation_ha": 5061.97
+      }
+    },
+    "2020": {
+      "FI": {
+        "contract_farm_crop_year_groups": 391,
+        "groups_with_observation": 281,
+        "parcel_area_ha": 7899.26,
+        "parcel_area_with_observation_ha": 5638.71
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 298,
+        "groups_with_observation": 298,
+        "parcel_area_ha": 4964.61,
+        "parcel_area_with_observation_ha": 4964.61
+      }
+    },
+    "2021": {
+      "FI": {
+        "contract_farm_crop_year_groups": 379,
+        "groups_with_observation": 272,
+        "parcel_area_ha": 7580.77,
+        "parcel_area_with_observation_ha": 5563.35
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 291,
+        "groups_with_observation": 291,
+        "parcel_area_ha": 4600.39,
+        "parcel_area_with_observation_ha": 4600.39
+      }
+    },
+    "2022": {
+      "FI": {
+        "contract_farm_crop_year_groups": 391,
+        "groups_with_observation": 296,
+        "parcel_area_ha": 7848.08,
+        "parcel_area_with_observation_ha": 5824.14
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 300,
+        "groups_with_observation": 300,
+        "parcel_area_ha": 4781.39,
+        "parcel_area_with_observation_ha": 4781.39
+      }
+    },
+    "2023": {
+      "FI": {
+        "contract_farm_crop_year_groups": 381,
+        "groups_with_observation": 288,
+        "parcel_area_ha": 7551.87,
+        "parcel_area_with_observation_ha": 5652.45
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 300,
+        "groups_with_observation": 300,
+        "parcel_area_ha": 4848.82,
+        "parcel_area_with_observation_ha": 4848.82
+      }
+    },
+    "2024": {
+      "FI": {
+        "contract_farm_crop_year_groups": 393,
+        "groups_with_observation": 285,
+        "parcel_area_ha": 7939.31,
+        "parcel_area_with_observation_ha": 5626.88
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 300,
+        "groups_with_observation": 300,
+        "parcel_area_ha": 5129.71,
+        "parcel_area_with_observation_ha": 5129.71
+      }
+    },
+    "2025": {
+      "FI": {
+        "contract_farm_crop_year_groups": 392,
+        "groups_with_observation": 283,
+        "parcel_area_ha": 7953.17,
+        "parcel_area_with_observation_ha": 5795.06
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 298,
+        "groups_with_observation": 298,
+        "parcel_area_ha": 4973.1,
+        "parcel_area_with_observation_ha": 4973.1
+      }
+    },
+    "2026": {
+      "FI": {
+        "contract_farm_crop_year_groups": 381,
+        "groups_with_observation": 272,
+        "parcel_area_ha": 7691.05,
+        "parcel_area_with_observation_ha": 5480.56
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 296,
+        "groups_with_observation": 296,
+        "parcel_area_ha": 4719.57,
+        "parcel_area_with_observation_ha": 4719.57
+      }
+    },
+    "2027": {
+      "FI": {
+        "contract_farm_crop_year_groups": 379,
+        "groups_with_observation": 0,
+        "parcel_area_ha": 7594.61,
+        "parcel_area_with_observation_ha": 0
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 300,
+        "groups_with_observation": 0,
+        "parcel_area_ha": 4790.86,
+        "parcel_area_with_observation_ha": 0
+      }
+    },
+    "2028": {
+      "FI": {
+        "contract_farm_crop_year_groups": 393,
+        "groups_with_observation": 0,
+        "parcel_area_ha": 7809.41,
+        "parcel_area_with_observation_ha": 0
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 300,
+        "groups_with_observation": 0,
+        "parcel_area_ha": 4857.53,
+        "parcel_area_with_observation_ha": 0
+      }
+    },
+    "2029": {
+      "FI": {
+        "contract_farm_crop_year_groups": 393,
+        "groups_with_observation": 0,
+        "parcel_area_ha": 7909.71,
+        "parcel_area_with_observation_ha": 0
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 300,
+        "groups_with_observation": 0,
+        "parcel_area_ha": 4915.95,
+        "parcel_area_with_observation_ha": 0
+      }
+    },
+    "2030": {
+      "FI": {
+        "contract_farm_crop_year_groups": 391,
+        "groups_with_observation": 0,
+        "parcel_area_ha": 7778.43,
+        "parcel_area_with_observation_ha": 0
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 298,
+        "groups_with_observation": 0,
+        "parcel_area_ha": 4942.75,
+        "parcel_area_with_observation_ha": 0
+      }
+    },
+    "2031": {
+      "FI": {
+        "contract_farm_crop_year_groups": 372,
+        "groups_with_observation": 0,
+        "parcel_area_ha": 7338.86,
+        "parcel_area_with_observation_ha": 0
+      },
+      "SE": {
+        "contract_farm_crop_year_groups": 296,
+        "groups_with_observation": 0,
+        "parcel_area_ha": 4761.33,
+        "parcel_area_with_observation_ha": 0
+      }
+    }
+  },
+  "survey_area_difference_over_5pct": {
+    "count": 85,
+    "examples": [
+      {
+        "survey_id": "FS00009",
+        "farm_id": "F0001",
+        "crop": "pea",
+        "year": "2025",
+        "reported_area_ha": 12.56,
+        "parcel_area_ha": 9.31
+      },
+      {
+        "survey_id": "FS00024",
+        "farm_id": "F0003",
+        "crop": "pea",
+        "year": "2018",
+        "reported_area_ha": 10.51,
+        "parcel_area_ha": 17.52
+      },
+      {
+        "survey_id": "FS00051",
+        "farm_id": "F0006",
+        "crop": "spinach",
+        "year": "2024",
+        "reported_area_ha": 39.79,
+        "parcel_area_ha": 24.86
+      },
+      {
+        "survey_id": "FS00168",
+        "farm_id": "F0025",
+        "crop": "pea",
+        "year": "2023",
+        "reported_area_ha": 21.71,
+        "parcel_area_ha": 16.08
+      },
+      {
+        "survey_id": "FS00241",
+        "farm_id": "F0030",
+        "crop": "potato",
+        "year": "2024",
+        "reported_area_ha": 8.26,
+        "parcel_area_ha": 6.12
+      },
+      {
+        "survey_id": "FS00251",
+        "farm_id": "F0031",
+        "crop": "pea",
+        "year": "2025",
+        "reported_area_ha": 21.13,
+        "parcel_area_ha": 15.65
+      },
+      {
+        "survey_id": "FS00309",
+        "farm_id": "F0040",
+        "crop": "pea",
+        "year": "2017",
+        "reported_area_ha": 19.1,
+        "parcel_area_ha": 14.15
+      },
+      {
+        "survey_id": "FS00324",
+        "farm_id": "F0042",
+        "crop": "pea",
+        "year": "2024",
+        "reported_area_ha": 9.62,
+        "parcel_area_ha": 16.04
+      },
+      {
+        "survey_id": "FS00336",
+        "farm_id": "F0044",
+        "crop": "pea",
+        "year": "2020",
+        "reported_area_ha": 12.75,
+        "parcel_area_ha": 7.97
+      },
+      {
+        "survey_id": "FS00375",
+        "farm_id": "F0048",
+        "crop": "pea",
+        "year": "2025",
+        "reported_area_ha": 20.86,
+        "parcel_area_ha": 15.45
+      }
+    ]
+  },
+  "parcel_soil_p_missing": 2518,
+  "example_2025_join": {
+    "survey": {
+      "survey_id": "FS00009",
+      "farm_id": "F0001",
+      "crop": "pea",
+      "year": "2025",
+      "area_ha": "12.56",
+      "soil_type_reported": "Mineral soil",
+      "n_mineral_kg_ha": "24.8",
+      "n_manure_kg_ha": "0.0",
+      "fertiliser_product": "AN low-carbon (green ammonia)",
+      "p_kg_ha": "11.7",
+      "diesel_l_ha": "97.0",
+      "lime_t_ha": "0.46",
+      "sprays": "3.8",
+      "irrigated": "False",
+      "catch_crop_share": "0.0",
+      "yield_t_ha": "3.48"
+    },
+    "parcels": [
+      {
+        "parcel_id": "F0001-P09",
+        "farm_id": "F0001",
+        "year": "2025",
+        "crop": "pea",
+        "catch_crop": "False",
+        "status": "declared",
+        "area_ha": "7.49",
+        "catchment_id": "CA28"
+      },
+      {
+        "parcel_id": "F0001-P14",
+        "farm_id": "F0001",
+        "year": "2025",
+        "crop": "pea",
+        "catch_crop": "False",
+        "status": "declared",
+        "area_ha": "1.82",
+        "catchment_id": "CA28"
+      }
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+supplier_id,supplier_name,supplier_type,country,material_id,sbti_status,provides_pcf,cdp_score
+SUP011,DEMO supplier 011,grain_trader,LT,M104,none,True,C
+SUP020,DEMO supplier 020,grain_trader,FI,M120,none,False,C
+SUP900,DEMO supplier 900,service_provider,FI,M900,none,False,B

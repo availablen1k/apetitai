@@ -1,0 +1,68 @@
+{
+  "year": 2025,
+  "field_rows": 14213,
+  "observation_rows": 581,
+  "fields_by_crop": {
+    "barley": 4033,
+    "carrot": 42,
+    "fallow": 962,
+    "grass_ley": 1649,
+    "oats": 1465,
+    "pea": 1309,
+    "potato": 57,
+    "spinach": 52,
+    "turnip_rape": 950,
+    "wheat": 3694
+  },
+  "contract_coverage_by_country": {
+    "FI": {
+      "contract_fields": 1490,
+      "mapped_area_ha": "7953.17",
+      "fields_with_management_observation": 1092,
+      "fields_missing_soil_p": 246,
+      "missing_management_fields": {
+        "soil_type_reported": 398,
+        "n_mineral_kg_ha": 398,
+        "n_manure_kg_ha": 398,
+        "n_applied_kg_ha": 1490,
+        "p_kg_ha": 398,
+        "fertiliser_product": 398,
+        "diesel_l_ha": 398,
+        "lime_t_ha": 398,
+        "sprays": 398,
+        "irrigated": 398,
+        "catch_crop_share": 398,
+        "yield_t_ha": 398
+      }
+    },
+    "SE": {
+      "contract_fields": 920,
+      "mapped_area_ha": "4973.10",
+      "fields_with_management_observation": 920,
+      "fields_missing_soil_p": 162,
+      "missing_management_fields": {
+        "soil_type_reported": 920,
+        "n_mineral_kg_ha": 920,
+        "n_manure_kg_ha": 920,
+        "n_applied_kg_ha": 0,
+        "p_kg_ha": 920,
+        "fertiliser_product": 920,
+        "diesel_l_ha": 0,
+        "lime_t_ha": 920,
+        "sprays": 920,
+        "irrigated": 0,
+        "catch_crop_share": 920,
+        "yield_t_ha": 920
+      }
+    }
+  },
+  "source_sha256": {
+    "03_farming/parcel_crop_history_and_plan.csv": "3c0c1b1f39a39472b525c894171b6900b9ab7cdca1549dc412255f43827ec6d4",
+    "01_master/farm_registry.csv": "cdc5656389edc9bf9bdc52151a72ad2f4047af1a0da0a1cb78eae314557bc242",
+    "01_master/parcels.csv": "c3cb6571639a39b7f053216aa95dad3851b491e3d2ec032158b8aabdb8309606",
+    "06_nature/catchments.csv": "9548f95758666c39f8eb1dae303236c55362a41f380f68c55e65c5de69f12fac",
+    "03_farming/farm_survey_fi.csv": "400a81631aaf4732b6dc9a4924b2832523e5c5ce3c319f692fe92534d0e21f82",
+    "03_farming/foodhills_odlingsdata_se.csv": "a36ace20ab25d1a209fef96f8db51a6e542ec3c6ef92740861c113c55129823a"
+  },
+  "builder_sha256": "5df3cc657b1945270ac320d55c356525dd218278ae05efddf39298929b1bc9a9"
+}

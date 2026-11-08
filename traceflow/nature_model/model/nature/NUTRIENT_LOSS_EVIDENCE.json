@@ -1,0 +1,24 @@
+[
+  {
+    "id": "package_reference_rates",
+    "source": "dataset/docs/SIMULATION_DESIGN.md",
+    "role": "reference_scale_only",
+    "summary": "The supplied synthetic challenge lists approximate Finnish field-loss reference rates of 1.1 kg P/ha/year and 15 kg N/ha/year. These are not catchment-specific calibrated coefficients."
+  },
+  {
+    "id": "luke_balance",
+    "url": "https://projects.luke.fi/ruokafakta/en/field-crops/nitrogen-and-phosphorus-balance/",
+    "title": "Nitrogen and phosphorus balance — Luke Food Facts",
+    "accessed_date": "2026-11-07",
+    "role": "conceptual_boundary_only",
+    "summary": "Nutrient balance compares application and crop uptake; it indicates risk but does not directly quantify short-term loading to water. The pilot does not equate application or a balance with delivered load. No numeric coefficient is taken from this page."
+  },
+  {
+    "id": "syke_transport",
+    "url": "https://www.vesi.fi/en/water-topics/can-water-pollution-from-farming-be-reduced/",
+    "title": "Can water pollution from farming be reduced? — Finnish Environment Institute",
+    "accessed_date": "2026-11-07",
+    "role": "qualitative_process_context_only",
+    "summary": "Bare soil, meltwater, flooding and autumn rain affect agricultural nutrient transport; erosion transports particle-bound P. Annual rainfall alone omits important processes. This supports process separation, not the pilot's numerical multipliers or delivery curve."
+  }
+]

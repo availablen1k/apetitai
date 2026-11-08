@@ -1,0 +1,5 @@
+﻿year;traveller_id;travel_date;mode;route;pkm;nights;booking_id
+2025;EMP001;2025-02-03;flight;HEL-AMS;3000,0;1;BK-DEMO-1
+2025;EMP002;2025-02-04;train;"HEL-TKU
+(return)";330,5;0;BK-DEMO-2
+2025;EMP001;2025-02-03;flight;HEL-AMS;3000,0;1;BK-DEMO-3

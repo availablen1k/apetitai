@@ -1,0 +1,37 @@
+result_key,source,url,licence,used_for,verification_status
+R1d2251f0dd2e3afff95f,AIB European residual mix 2024,https://www.aib-net.org/sites/default/files/assets/facts/residual-mix/2024/2024_Final%20_Residual%20mix%20calculation%20results_30052025.pdf,free to download,residual mix,not_fetched_or_verified
+Rd24a89bd96406fb98f20,Agribalyse,https://doc.agribalyse.fr/documentation-en/agribalyse-data/terms-of-use-and-environmental-communication,Etalab Open Licence 2.0 (ecoinvent background separate),food LCA factors,not_fetched_or_verified
+R524ee58bc7bbd595e295,Apetit Annual Report 2024,https://apetit.fi/app/uploads/Apetit_Annual_Report_2024.pdf,company report,"published inventory, context",not_fetched_or_verified
+Rfbb9ae2ee63efbd3df11,Apetit ESEF 2025 filing,https://filings.xbrl.org/743700RSFZUIQYABYT14/2025-12-31/ESEF/FI/0/743700RSFZUIQYABYT14-2025-12-31-1-en/reports/743700RSFZUIQYABYT14-2025-12-31-1-en.html,company filing,"structure, sites, Foodhills",not_fetched_or_verified
+R5c5a7c9645a5e3e6abf7,Copernicus ERA5 / CDS,https://forum.ecmwf.int/t/cc-by-licence-to-replace-licence-to-use-copernicus-products-on-02-july-2025/13464,CC BY (from 2 Jul 2025),reanalysis weather,not_fetched_or_verified
+R375e260cbee86a688fce,EFRAG simplified ESRS E1,https://knowledgehub.efrag.org/interactive/simplified-esrs/esrs-e1,web page,climate metrics,not_fetched_or_verified
+Rc5e06775f40f297828aa,EFRAG simplified ESRS E3 (Delegated Act),https://knowledgehub.efrag.org/eng/interactive/simplified-esrs/esrs-e3/delegated-act,web page,water metrics,not_fetched_or_verified
+Rea5028a62fd7e8cd8705,EUDR amendment (EU) 2025/2650 overview,https://environment.ec.europa.eu/news/commission-updates-product-scope-and-tools-support-eudr-2026-07-13_en,EU,EUDR scope,not_fetched_or_verified
+Ra46c594ff1571cadfa7d,EXIOBASE 3.10.1,https://zenodo.org/records/18937492,non-commercial; commercial licence needed,spend-based EFs (NOT redistributed),not_fetched_or_verified
+R391756865560f88dbe36,FAOSTAT,https://www.fao.org/contact-us/terms/db-terms-of-use,CC BY 4.0 + FAO terms,country statistics,not_fetched_or_verified
+Rce545e1735167b189de7,FMI open data,https://en.ilmatieteenlaitos.fi/open-data-licence,CC BY 4.0,weather observations,not_fetched_or_verified
+R073991c42b7827b89065,Fingrid dataset 266 (CO2 of electricity production),https://data.fingrid.fi/en/datasets/266,CC BY 4.0,grid factor,not_fetched_or_verified
+Rbbacaf8414ed3c679c1f,Finland regional climate scenarios (Paituli CSV),https://climateguide.fi/articles/finlands-regional-climate-change-scenarios,check Paituli terms; Climate Guide website content is non-commercial,projections,not_fetched_or_verified
+Rfeb03e309e0c8255c972,Finnish Food Authority field parcels,https://geoportal.ymparisto.fi/meta/julkinen/dokumentit/Metatietokuvaus_peltolohkorekisteri.pdf,CC BY 4.0 (verify),parcel geometries,not_fetched_or_verified
+Ra6150a74ef283d9704b3,GFW / UMD tree cover loss,https://data-api.globalforestwatch.org/dataset/umd_tree_cover_loss,CC BY 4.0,deforestation risk,not_fetched_or_verified
+Re29eab86fc18f1028abb,GHG Protocol Land Sector and Removals Standard,https://ghgprotocol.org/land-sector-and-removals-standard,free to download; copyrighted,land accounting,not_fetched_or_verified
+R6d1257489161fc909ee4,GHG Protocol Scope 2 status,https://ghgprotocol.org/blog/scope-2-market-based-method-update-2025-2026-public-consultation-current-status,web page,scope 2,not_fetched_or_verified
+R19012b0f702b397a040c,IBAT / KBA,https://www.keybiodiversityareas.org/terms-service,restricted; written permission for commercial use,sensitive sites (NOT redistributed),not_fetched_or_verified
+Rb4ca09c794f3e65a7c68,Luke statistics (crop production),https://statdb.luke.fi/PxWeb/sq/f93bcf99-f22e-4b9e-b871-cd30e3de18e7?lang=en,CC BY 4.0,yield calibration,not_fetched_or_verified
+R8a3078cbfda15443dbf2,NGFS scenarios portal,https://www.ngfs.net/ngfs-scenarios-portal/,NGFS data licence (check before commercial use),transition scenarios,not_fetched_or_verified
+R583f42fc5497c9fe03a3,NHM Biodiversity Intactness Index,https://data.nhm.ac.uk/dataset/bii-developed-by-nhm-v2-1-1-limited-release,CC BY-NC-SA 4.0 (non-commercial),biodiversity state (NOT redistributed),not_fetched_or_verified
+Rba4caa4b2bc80909cef8,PACT Technical Specifications,https://wbcsd.github.io/tr/2023/data-exchange-protocol-20231207/,"WBCSD, open specification",supplier PCF format,not_fetched_or_verified
+Ra93217545a691d01723d,"Pyhäjärvi phosphorus load (Ventelä, ESPC3)",https://www.phosphorusplatform.eu/images/Conference/ESPC3/Outcomes/ESPC3-Ventela-Pyhajarvi-instituutti.pdf,presentation,lake catchment calibration,not_fetched_or_verified
+R81fad1111fd651e2b3e4,Ruosteenoja & Jylhä 2021 (Geophysica),https://www.geophysica.fi/pdf/geophysica_2021_56_1_039_ruosteenoja.pdf,journal article,CMIP6 deltas,not_fetched_or_verified
+Rf8c9d659ad0e7934e1dd,SBTN Step 1a materiality screening,https://sciencebasedtargetsnetwork.org/companies/take-action/assess/materiality-screening,free to download,nature screening,not_fetched_or_verified
+Rfe9f6bfdf09882a7e24d,SBTN Step 2 technical guidance v1.1,https://sciencebasedtargetsnetwork.org/wp-content/uploads/2024/07/Technical-Guidance-2024-Step2-Prioritize-v1-1.pdf,free to download,prioritisation,not_fetched_or_verified
+R2a925a8bbdf42114a821,SBTN state of nature water layers v2,https://zenodo.org/records/7797979/latest,CC BY 4.0,water state of nature,not_fetched_or_verified
+R10c8c3a55811e9647311,SBTi CNZS V1.3.1 Method Appendix,https://files.sciencebasedtargets.org/production/files/CNZS-V1.3.1-Method-Appendix.pdf,free to download; copyrighted,reduction rates,not_fetched_or_verified
+R94161a4832722083d721,SBTi Corporate Net-Zero Standard V2.0,https://files.sciencebasedtargets.org/production/files/Corporate-Net-Zero-Standard-version-2.pdf,free to download; copyrighted,target rules,not_fetched_or_verified
+R4839063669f398568aad,SBTi FLAG,https://sciencebasedtargets.org/sector-development/forest-land-and-agriculture/,free to download; copyrighted,FLAG requirements,not_fetched_or_verified
+R44bf7db1163bc77e4427,SYKE Corine land cover 2018,https://ckan.ymparisto.fi/en/dataset/corine-maanpeite-2018,CC BY 4.0,land cover,not_fetched_or_verified
+Rca19bd8cb38b381f4ce8,SYKE catchment division (valuma-aluejako),https://ckanfeo.ymparisto.fi/dataset/valuma-aluejako,CC BY 4.0,catchments,not_fetched_or_verified
+R9444a8a02458a7b82597,SYKE organic-soil emission factors (Kokemäenjoki dataset),https://ckan.ymparisto.fi/dataset/greenhouse-gas-net-emissions-for-agricultural-areas-in-kokemaenjoki-river-basin-calculated-for-,CC BY 4.0,organic soil CO2,not_fetched_or_verified
+Ra35877f8cbd83df2883f,"Statistics Finland open data (fuel classification, electricity EFs)",https://stat.fi/org/avoindata/index_en.html,CC BY 4.0,fuel EFs,not_fetched_or_verified
+R6384e67988f9fb8d6bb2,WRI Aqueduct 4.0,https://github.com/wri/Aqueduct40,CC BY 4.0,water stress,not_fetched_or_verified
+R33fd8c699892761f1804,Yara carbon footprint verification statement,https://pre.yara.co.uk/contentassets/a6e77004605040aea339577f909d5368/yara-carbon-footprint_verification_statement.pdf,free to download,fertiliser EF,not_fetched_or_verified

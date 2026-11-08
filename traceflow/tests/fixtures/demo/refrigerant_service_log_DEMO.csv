@@ -1,0 +1,7 @@
+site_id,system,refrigerant,year,service_date,reason,event_id,kg_added
+S-DEMO-A,DEMO cold store,R404A,2024,2024-02-15,leak repair,RS00070,12.5
+S-DEMO-A,DEMO cold store,R404A,2024,2024-03-15,leak repair,RS00071,9.8
+S-DEMO-A,DEMO cold store,R404A,2024,2024-04-15,leak repair,RS00072,14.1
+S-DEMO-A,DEMO cold store,R404A,2024,2024-05-15,leak repair,RS00073,11.0
+S-DEMO-A,DEMO cold store,R404A,2024,2024-06-15,leak repair,RS00074,10.4
+S-DEMO-A,DEMO cold store,R404A,2025,2025-04-10,leak repair,RS00080,85150

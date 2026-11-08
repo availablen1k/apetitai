@@ -1,0 +1,40 @@
+{
+  "year": 2025,
+  "policy_version": "0.2.0",
+  "review_state": "provisional_unreviewed",
+  "fields": 2899,
+  "input_records": 60879,
+  "variants": [
+    "reported_only",
+    "country_peers",
+    "se_pea_proxy"
+  ],
+  "evidence_entities": 16355,
+  "raw_evidence_records": 15708,
+  "foreign_keys": "passed",
+  "integrity": "passed",
+  "input_evidence": "passed",
+  "area_conservation": "passed",
+  "field_input_population": "passed",
+  "donor_evidence_counts": "passed",
+  "limitations": [
+    "Peer spread is not a calibrated prediction interval",
+    "Leave-farm-out checks evaluate self-report consistency, not truth or cross-country transfer",
+    "No approved corrections applied; no nutrient losses calculated"
+  ],
+  "verification_date": "2026-11-07",
+  "checks": {
+    "full_test_suite": {
+      "passed": true,
+      "tests_run": 71,
+      "command": "python3 -m unittest discover -s tools -p 'test_*.py'"
+    },
+    "final_focused_tests": {
+      "passed": true,
+      "tests_run": 10,
+      "command": "python3 -m unittest discover -s tools -p 'test_nutrient_input*.py'"
+    },
+    "artifact_code_config_and_document_hashes_verified": true,
+    "base_preflight_after_experiment": "passed"
+  }
+}

@@ -1,0 +1,2 @@
+result_key,scenario,ngfs_category,narrative,year,physical_pathway_proxy,carbon_price_eur_t,eu_ets2_fuel_price_eur_t,electricity_price_eur_mwh,n_fertiliser_price_index,diesel_price_index,plant_based_demand_index,frozen_veg_import_premium_pct,value_status,matching_weather_grid_count
+net_zero_2050:2030,net_zero_2050,orderly,"Immediate, ambitious policy; global net zero CO2 ~2050.",2030,ssp126,160.0,47.0,64.5,1.149,1.063,1.05,5.03,illustrative (NGFS Phase V-consistent ranges); replace with IIASA NGFS data for production,84

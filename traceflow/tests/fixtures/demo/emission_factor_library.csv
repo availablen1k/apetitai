@@ -1,0 +1,7 @@
+ef_id,name,unit,kgco2e_per_unit,flag_share,luc_included,source_type,reference_source,geography,version,value_status,gwp_set
+EF-TKM-TRUCK,DEMO truck (WTW),tkm,0.1,0,False,demo,DEMO fixture,EU,2025,demo,IPCC AR6 GWP100
+EF-TKM-ROPAX,DEMO Ro-Pax ferry (WTW),tkm,0.05,0,False,demo,DEMO fixture,EU,2025,demo,IPCC AR6 GWP100
+EF-DEMO-RAPESEED,DEMO rapeseed,kg,1.4,0.8,False,demo,DEMO fixture,LT,2025,demo,IPCC AR6 GWP100
+EF-DEMO-PEA,DEMO peas,kg,0.5,0.6,False,demo,DEMO fixture,FI,2025,demo,IPCC AR6 GWP100
+EF-DEMO-SERVICE,DEMO services (spend),EUR,0.1,0,False,demo,DEMO fixture,FI,2025,demo,IPCC AR6 GWP100
+EF-ELEC-UPSTREAM-FI,DEMO electricity upstream,MWh,10,0,False,demo,DEMO fixture,FI,2025,demo,IPCC AR6 GWP100

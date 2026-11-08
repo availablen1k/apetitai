@@ -1,0 +1,24 @@
+{
+ "id": "demo-2024",
+ "specVersion": "2.2.0",
+ "version": 1,
+ "status": "Active",
+ "companyName": "DEMO supplier 011",
+ "companyIds": [
+  "urn:pathfinder:company:customcode:buyer-assigned:SUP011"
+ ],
+ "productDescription": "DEMO rapeseed import",
+ "productIds": [
+  "urn:pathfinder:product:customcode:buyer-assigned:M104"
+ ],
+ "comment": "DEMO PCF for tests.",
+ "pcf": {
+  "declaredUnit": "kilogram",
+  "unitaryProductAmount": "1",
+  "pCfExcludingBiogenic": "1.3515",
+  "pCfIncludingBiogenic": "1.3515",
+  "referencePeriodStart": "2024-01-01T00:00:00Z",
+  "referencePeriodEnd": "2025-01-01T00:00:00Z",
+  "geographyCountry": "LT"
+ }
+}

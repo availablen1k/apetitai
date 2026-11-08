@@ -1,0 +1,3 @@
+site_id,name,country,lat,lon,activity,in_group_from,in_group_to
+S-DEMO-A,DEMO plant A,FI,61.0,22.2,DEMO frozen vegetables,1990,
+S-DEMO-B,DEMO mill B,FI,60.1,24.4,DEMO oilseed crushing,1990,

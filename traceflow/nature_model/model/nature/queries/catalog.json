@@ -1,0 +1,568 @@
+[
+  {
+    "id": "01_contract_area",
+    "lineage": "field_contributors.sql",
+    "description": "Mapped 2025 contract-crop area and field/farm counts by catchment. Selection is provisional; farm counts are not additive between catchments.",
+    "grain": "one catchment",
+    "parameters": {
+      "year": {
+        "type": "integer",
+        "nullable": false,
+        "default": 2025,
+        "minimum": 1900,
+        "maximum": 2200
+      }
+    }
+  },
+  {
+    "id": "02_data_gaps",
+    "lineage": "field_contributors.sql",
+    "description": "Missing reports, P application and soil P tests among selected 2025 fields. Report gaps are distinct from fields omitted by a source schema.",
+    "grain": "one catchment",
+    "parameters": {
+      "year": {
+        "type": "integer",
+        "nullable": false,
+        "default": 2025,
+        "minimum": 1900,
+        "maximum": 2200
+      }
+    }
+  },
+  {
+    "id": "03_ecological_context",
+    "lineage": "catchment_contributors.sql",
+    "description": "Ecological state and phosphorus sensitivity of all catchments. Context for later prioritisation; not a pollution estimate or final priority rank.",
+    "grain": "one catchment",
+    "parameters": {}
+  },
+  {
+    "id": "04_monitoring_change",
+    "lineage": "monitoring_contributors.sql",
+    "description": "Observed whole-catchment nutrient loads in 2019 and 2025, descriptive endpoint changes, and monitoring coverage. Includes background and non-contract farming; no attribution to Apetit.",
+    "grain": "one catchment",
+    "parameters": {}
+  },
+  {
+    "id": "05_farming_coverage",
+    "lineage": "coverage_contributors.sql",
+    "description": "Declared provisional contract crop coverage by country/crop/year; missing reports differ from missing measurements.",
+    "grain": "country/crop/year",
+    "parameters": {
+      "year": {
+        "type": "integer",
+        "nullable": true,
+        "default": null,
+        "minimum": 1900,
+        "maximum": 2200
+      },
+      "country": {
+        "type": "string",
+        "nullable": true,
+        "default": null,
+        "enum": [
+          "FI",
+          "SE"
+        ]
+      },
+      "crop": {
+        "type": "string",
+        "nullable": true,
+        "default": null
+      }
+    }
+  },
+  {
+    "id": "06_area_discrepancies",
+    "lineage": "finding_contributors.sql",
+    "description": "Reported versus mapped crop-area review candidates, with original reports and evidence.",
+    "grain": "one area finding",
+    "parameters": {
+      "year": {
+        "type": "integer",
+        "nullable": true,
+        "default": null,
+        "minimum": 1900,
+        "maximum": 2200
+      },
+      "limit": {
+        "type": "integer",
+        "default": 100,
+        "minimum": 1,
+        "maximum": 1000
+      },
+      "offset": {
+        "type": "integer",
+        "default": 0,
+        "minimum": 0
+      }
+    }
+  },
+  {
+    "id": "07_quality_findings",
+    "lineage": "finding_contributors.sql",
+    "description": "Filter investigation findings; static findings remain visible when filtering a year.",
+    "grain": "one finding",
+    "parameters": {
+      "year": {
+        "type": "integer",
+        "nullable": true,
+        "default": null,
+        "minimum": 1900,
+        "maximum": 2200
+      },
+      "rule_id": {
+        "type": "string",
+        "nullable": true,
+        "default": null
+      },
+      "review_status": {
+        "type": "string",
+        "nullable": true,
+        "default": null,
+        "enum": [
+          "unreviewed",
+          "confirmed",
+          "dismissed",
+          "needs_investigation"
+        ]
+      },
+      "limit": {
+        "type": "integer",
+        "default": 100,
+        "minimum": 1,
+        "maximum": 1000
+      },
+      "offset": {
+        "type": "integer",
+        "default": 0,
+        "minimum": 0
+      }
+    }
+  },
+  {
+    "id": "08_catchment_quality",
+    "lineage": "catchment_quality_contributors.sql",
+    "description": "Distinct non-dismissed findings affecting fields by catchment/year; this is data quality, not pollution risk.",
+    "grain": "catchment/year",
+    "parameters": {
+      "year": {
+        "type": "integer",
+        "nullable": true,
+        "default": null,
+        "minimum": 1900,
+        "maximum": 2200
+      },
+      "catchment_id": {
+        "type": "string",
+        "nullable": true,
+        "default": null
+      }
+    }
+  },
+  {
+    "id": "09_field_history",
+    "lineage": "history_contributors.sql",
+    "description": "Field crop history and future plans, with exact-year management matches.",
+    "grain": "field/year",
+    "parameters": {
+      "parcel_id": {
+        "type": "string",
+        "nullable": false,
+        "default": "F0001-P09"
+      },
+      "start_year": {
+        "type": "integer",
+        "nullable": true,
+        "default": null,
+        "minimum": 1900,
+        "maximum": 2200
+      },
+      "end_year": {
+        "type": "integer",
+        "nullable": true,
+        "default": null,
+        "minimum": 1900,
+        "maximum": 2200
+      }
+    }
+  },
+  {
+    "id": "10_field_weather",
+    "lineage": "field_weather_contributors.sql",
+    "grain": "field/year/scenario",
+    "description": "Annual and Apr-Sep weather exposure from an assumed grid mapping; future scenarios remain separate.",
+    "parameters": {
+      "year": {
+        "type": "integer",
+        "default": 2025,
+        "minimum": 1900,
+        "maximum": 2200
+      },
+      "scenario": {
+        "type": "string",
+        "default": "historical",
+        "enum": [
+          "historical",
+          "ssp126",
+          "ssp245",
+          "ssp585"
+        ]
+      },
+      "catchment_id": {
+        "type": "string",
+        "nullable": true,
+        "default": null
+      },
+      "parcel_id": {
+        "type": "string",
+        "nullable": true,
+        "default": null
+      },
+      "limit": {
+        "type": "integer",
+        "default": 100,
+        "minimum": 1,
+        "maximum": 1000
+      },
+      "offset": {
+        "type": "integer",
+        "default": 0,
+        "minimum": 0
+      }
+    }
+  },
+  {
+    "id": "11_catchment_weather",
+    "lineage": "catchment_weather_contributors.sql",
+    "grain": "catchment/year/scenario",
+    "description": "Area-weighted precipitation over provisionally selected contract fields; not whole-catchment rainfall or nutrient loss.",
+    "parameters": {
+      "year": {
+        "type": "integer",
+        "default": 2025,
+        "minimum": 1900,
+        "maximum": 2200
+      },
+      "scenario": {
+        "type": "string",
+        "default": "historical",
+        "enum": [
+          "historical",
+          "ssp126",
+          "ssp245",
+          "ssp585"
+        ]
+      },
+      "catchment_id": {
+        "type": "string",
+        "nullable": true,
+        "default": null
+      }
+    }
+  },
+  {
+    "id": "12_sourcing_by_origin",
+    "lineage": "sourcing_contributors.sql",
+    "grain": "material/origin/year",
+    "description": "Reported ERP net quantities and reference-rate amounts, including signed returns and unresolved review candidates; not corrected procurement totals.",
+    "parameters": {
+      "year": {
+        "type": "integer",
+        "default": 2025,
+        "minimum": 1900,
+        "maximum": 2200
+      },
+      "origin_country": {
+        "type": "string",
+        "nullable": true,
+        "default": null
+      },
+      "material_id": {
+        "type": "string",
+        "nullable": true,
+        "default": null
+      }
+    }
+  },
+  {
+    "id": "13_farm_sourcing_support",
+    "lineage": "farm_sourcing_contributors.sql",
+    "grain": "farm/crop/year",
+    "description": "Annual reported ERP sourcing support for provisional contract crops; absent purchases do not establish absence of a contract.",
+    "parameters": {
+      "year": {
+        "type": "integer",
+        "default": 2025,
+        "minimum": 1900,
+        "maximum": 2200
+      },
+      "country": {
+        "type": "string",
+        "nullable": true,
+        "default": null,
+        "enum": [
+          "FI",
+          "SE"
+        ]
+      }
+    }
+  },
+  {
+    "id": "14_master_references",
+    "lineage": "master_contributors.sql",
+    "grain": "one reference resolution",
+    "description": "Inspect site/factor resolution, retaining FARM as a method and units/value status as context.",
+    "parameters": {
+      "kind": {
+        "type": "string",
+        "default": "material_factor",
+        "enum": [
+          "material_factor",
+          "material_site",
+          "erp_site"
+        ]
+      },
+      "lookup_id": {
+        "type": "string",
+        "nullable": true,
+        "default": null
+      },
+      "limit": {
+        "type": "integer",
+        "default": 100,
+        "minimum": 1,
+        "maximum": 1000
+      },
+      "offset": {
+        "type": "integer",
+        "default": 0,
+        "minimum": 0
+      }
+    }
+  },
+  {
+    "id": "15_farm_context",
+    "lineage": "farm_context_contributors.sql",
+    "grain": "one farm",
+    "description": "Static registry attributes and mapped area; no historical ownership or contract confirmation.",
+    "parameters": {
+      "farm_id": {
+        "type": "string",
+        "nullable": true,
+        "default": null
+      },
+      "country": {
+        "type": "string",
+        "nullable": true,
+        "default": null,
+        "enum": [
+          "FI",
+          "SE"
+        ]
+      },
+      "limit": {
+        "type": "integer",
+        "default": 100,
+        "minimum": 1,
+        "maximum": 1000
+      },
+      "offset": {
+        "type": "integer",
+        "default": 0,
+        "minimum": 0
+      }
+    }
+  },
+  {
+    "id": "16_method_evidence",
+    "lineage": "method_evidence_contributors.sql",
+    "grain": "one curated method-evidence link",
+    "description": "Explain implemented assumptions versus planned methods using local sections and unfetched source pointers.",
+    "parameters": {
+      "method_id": {
+        "type": "string",
+        "nullable": true,
+        "default": null
+      },
+      "table_name": {
+        "type": "string",
+        "nullable": true,
+        "default": null
+      }
+    }
+  },
+  {
+    "id": "17_framework_sources",
+    "lineage": "reference_contributors.sql",
+    "grain": "one source pointer",
+    "description": "Search package reference names and uses; licences and claims are reported, not independently verified.",
+    "parameters": {
+      "search": {
+        "type": "string",
+        "nullable": true,
+        "default": null
+      }
+    }
+  },
+  {
+    "id": "18_nature_action_opportunities",
+    "lineage": "action_opportunity_contributors.sql",
+    "grain": "catchment/evidence year/lever",
+    "description": "Unreviewed field-screening leads for nature actions, with ecological context; no nutrient reductions or final priority rank.",
+    "parameters": {
+      "year": {
+        "type": "integer",
+        "default": 2025,
+        "minimum": 1900,
+        "maximum": 2200
+      },
+      "planning_year": {
+        "type": "integer",
+        "default": 2027,
+        "minimum": 1900,
+        "maximum": 2200
+      },
+      "crop_status": {
+        "type": "string",
+        "default": "declared",
+        "enum": [
+          "declared",
+          "planned"
+        ]
+      },
+      "catchment_id": {
+        "type": "string",
+        "nullable": true,
+        "default": null
+      },
+      "lever_id": {
+        "type": "string",
+        "nullable": true,
+        "default": null
+      }
+    }
+  },
+  {
+    "id": "19_scenario_context",
+    "lineage": "scenario_contributors.sql",
+    "grain": "transition scenario/year",
+    "description": "Illustrative economic pathway, physical proxy and matching weather coverage; no interpolation or risk calculation.",
+    "parameters": {
+      "scenario": {
+        "type": "string",
+        "default": "net_zero_2050"
+      },
+      "year": {
+        "type": "integer",
+        "default": 2030,
+        "minimum": 1900,
+        "maximum": 2200
+      }
+    }
+  },
+  {
+    "id": "20_structural_events",
+    "lineage": "event_contributors.sql",
+    "grain": "one dated package event",
+    "description": "Dated organisational and framework context from package records; not independently verified or automatic scope filtering.",
+    "parameters": {
+      "start_date": {
+        "type": "string",
+        "nullable": true,
+        "default": null,
+        "format": "date"
+      },
+      "end_date": {
+        "type": "string",
+        "nullable": true,
+        "default": null,
+        "format": "date"
+      },
+      "type": {
+        "type": "string",
+        "nullable": true,
+        "default": null
+      }
+    }
+  },
+  {
+    "id": "21_action_details",
+    "lineage": "action_detail_contributors.sql",
+    "grain": "one lever",
+    "description": "Original action costs/co-benefits/tradeoffs plus explicit nature-screening predicates and unmet prerequisites; programme estimates are not per-field.",
+    "parameters": {
+      "lever_id": {
+        "type": "string",
+        "nullable": true,
+        "default": "L10"
+      }
+    }
+  },
+  {
+    "id": "22_nutrient_input_readiness",
+    "lineage": "nutrient_readiness_contributors.sql",
+    "description": "Draft nutrient-input coverage by catchment/country/crop/year/selection/input/status, with mapped hectares and overlapping quality context; availability is not scientific approval.",
+    "grain": "catchment/country/crop/year/crop status/selection status/input/availability status",
+    "parameters": {
+      "year": {
+        "type": "integer",
+        "nullable": true,
+        "default": 2025,
+        "minimum": 1900,
+        "maximum": 2200
+      },
+      "catchment_id": {
+        "type": "string",
+        "nullable": true,
+        "default": null
+      },
+      "country": {
+        "type": "string",
+        "nullable": true,
+        "default": null,
+        "enum": [
+          "FI",
+          "SE"
+        ]
+      },
+      "crop": {
+        "type": "string",
+        "nullable": true,
+        "default": null
+      },
+      "selection_status": {
+        "type": "string",
+        "nullable": true,
+        "default": "selected",
+        "enum": [
+          "selected",
+          "unknown_contract_list",
+          "not_selected_by_registry"
+        ]
+      },
+      "crop_status": {
+        "type": "string",
+        "nullable": true,
+        "default": "declared",
+        "enum": [
+          "declared",
+          "planned"
+        ]
+      },
+      "input_name": {
+        "type": "string",
+        "nullable": true,
+        "default": null,
+        "enum": [
+          "p_kg_ha",
+          "n_mineral_kg_ha",
+          "n_manure_kg_ha",
+          "n_applied_kg_ha",
+          "yield_t_ha",
+          "p_test_mgl_latest"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "handover_date": "2026-11-07",
+  "milestone": "Documented, portable data foundation; nutrient models and final rankings remain TODO",
+  "runtime": {
+    "python": "3.14.4",
+    "sqlite": "3.46.1"
+  },
+  "checks": {
+    "full_test_suite": {
+      "passed": true,
+      "tests_run": 54,
+      "command": "python3 -m unittest discover -s tools -p 'test_*.py'"
+    },
+    "full_model_rebuilt": true,
+    "existing_build_source_and_code_hashes_verified": true,
+    "copied_folder_with_external_dataset_tested": true,
+    "query_from_different_working_directory_tested": true,
+    "pre_packaging_state_preserved": true,
+    "default_query_results_match_pre_packaging_snapshot": true,
+    "unchanged_default_result_rows": 2539,
+    "source_files": 30,
+    "saved_default_queries": 21,
+    "working_databases_and_backups_excluded_from_git": true,
+    "historical_local_snapshot_verification": {
+      "format": "XZ",
+      "artifact_bytes": 60191772,
+      "round_trip_verified": true,
+      "all_table_counts_verified": true,
+      "query_results_unchanged": true,
+      "restored_source_code_hashes_verified": true,
+      "targeted_tests_passed": 5
+    }
+  },
+  "commands_assume": "Current working directory is apetit_nature_model unless using a full script path",
+  "remaining_work": "See ROADMAP.md. Manual snapshot support is not automatic state migration.",
+  "git_actions": "Build-from-source removal prepared; commit/history update and push are performed by the user.",
+  "distribution": {
+    "mode": "build_from_tracked_sources",
+    "database_binaries_in_current_tree": false,
+    "compressed_snapshots_in_current_tree": false,
+    "previous_local_export_preserved": "backups/previous_git_snapshot/"
+  }
+}

@@ -1,0 +1,24 @@
+# Local/rebuildable databases and their SQLite sidecars
+*.sqlite
+*.sqlite-*
+*.sqlite.*
+/analysis/nature/database_snapshot.json
+*.db
+*.db-*
+/analysis/nature/.database-share-*/
+/analysis/nature/input_runs/
+/analysis/nature/loss_runs/
+
+# Local safety copies; preserve separately when sharing expert-review history
+/backups/
+
+# Optional large derived farming exports (regenerate with the documented tool)
+/analysis/farming/2025/*.csv
+
+# Python/runtime artefacts
+__pycache__/
+*.pyc
+.venv/
+*.log
+.env
+.env.*

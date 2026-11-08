@@ -1,0 +1,20 @@
+{
+  "verification_date": "2026-11-07",
+  "milestone": "P1 first increment: nutrient-input coverage and draft policy 0.1.0",
+  "policy_review_state": "draft_unreviewed",
+  "checks": {
+    "full_test_suite": {
+      "passed": true,
+      "tests_run": 64,
+      "command": "python3 -m unittest discover -s tools -p 'test_*.py'"
+    },
+    "full_model_rebuilt": true,
+    "existing_build_source_and_code_hashes_verified": true,
+    "previous_database_snapshotted": true,
+    "original_21_default_outputs_unchanged": true,
+    "unchanged_existing_result_rows": 2539,
+    "saved_default_queries": 22,
+    "nutrient_coverage_result_rows": 772
+  },
+  "remaining": "Scientific input-policy review, uncertainty and alternative-treatment sensitivity remain open; no nutrient-loss estimates were introduced."
+}

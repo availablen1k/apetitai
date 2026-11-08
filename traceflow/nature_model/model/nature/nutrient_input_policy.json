@@ -1,0 +1,14 @@
+{
+  "policy_id": "nutrient_model_inputs",
+  "version": "0.2.0",
+  "review_state": "provisional_unreviewed",
+  "method_version": "leave_farm_out_peer_median_v1",
+  "minimum_donors": 8,
+  "quantiles": [0.1, 0.9],
+  "variants": ["reported_only", "country_peers", "se_pea_proxy"],
+  "proxy": {"target_country": "SE", "donor_country": "FI", "crop": "pea", "inputs": ["p_kg_ha", "yield_t_ha"]},
+  "management_group": ["country", "crop", "year"],
+  "soil_group": ["country", "catchment_id", "soil_class_soilmap"],
+  "scope": ["selected", "unknown_contract_list"],
+  "evidence_documents": ["../docs/NATURE_SBTN.md", "../docs/DATA_DICTIONARY.md", "../docs/ASSUMPTIONS_AND_LIMITATIONS.md"]
+}

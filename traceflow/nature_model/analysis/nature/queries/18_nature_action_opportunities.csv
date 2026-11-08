@@ -1,0 +1,145 @@
+result_key,catchment_id,region,evidence_year,crop_status,lever_id,name,candidate_field_count,candidate_farm_count,candidate_area_ha,fields_without_management_report,ecological_status_class,p_sensitivity,earliest_start,planning_year,catalogue_start_year_reached,efficacy_status,screening_status
+CA01:2025:L09,CA01,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,12,9,60.61,4,good,1.6,2027,2027,1,not_quantified,requires_expert_assessment
+CA01:2025:L10,CA01,FI_SW,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",44,20,225.55,11,good,1.6,2027,2027,1,not_quantified,requires_expert_assessment
+CA01:2025:L11,CA01,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,1,1,0.93,0,good,1.6,2027,2027,1,not_quantified,requires_expert_assessment
+CA01:2025:L12,CA01,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,1,1,0.93,0,good,1.6,2029,2027,0,not_quantified,requires_expert_assessment
+CA01:2025:L24,CA01,FI_SW,2025,declared,L24,Irrigation scheduling & drip on carrots/potatoes,21,6,98.82,9,good,1.6,2027,2027,1,not_quantified,requires_expert_assessment
+CA02:2025:L09,CA02,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,4,3,18.78,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA02:2025:L10,CA02,FI_SW,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",14,8,71.64,1,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA02:2025:L11,CA02,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,2,2,13.72,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA02:2025:L12,CA02,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,2,2,13.72,0,poor,1.15,2029,2027,0,not_quantified,requires_expert_assessment
+CA03:2025:L09,CA03,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,14,10,86.38,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA03:2025:L11,CA03,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,3,3,8.98,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA03:2025:L12,CA03,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,3,3,8.98,0,poor,1.15,2029,2027,0,not_quantified,requires_expert_assessment
+CA04:2025:L09,CA04,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,1,1,4.95,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA04:2025:L10,CA04,FI_SW,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",1,1,3.19,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA04:2025:L11,CA04,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,1,1,3.19,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA04:2025:L12,CA04,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,1,1,3.19,0,moderate,1.0,2029,2027,0,not_quantified,requires_expert_assessment
+CA05:2025:L09,CA05,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,1,1,6.53,0,good,1.3,2027,2027,1,not_quantified,requires_expert_assessment
+CA05:2025:L24,CA05,FI_SW,2025,declared,L24,Irrigation scheduling & drip on carrots/potatoes,2,1,8.48,0,good,1.3,2027,2027,1,not_quantified,requires_expert_assessment
+CA06:2025:L09,CA06,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,12,10,81.45,5,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA06:2025:L10,CA06,FI_SW,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",50,19,268.57,22,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA06:2025:L11,CA06,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,5,3,32.08,4,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA06:2025:L12,CA06,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,5,3,32.08,4,poor,1.15,2029,2027,0,not_quantified,requires_expert_assessment
+CA06:2025:L24,CA06,FI_SW,2025,declared,L24,Irrigation scheduling & drip on carrots/potatoes,12,4,69.43,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA07:2025:L09,CA07,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,19,12,94.97,7,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA07:2025:L10,CA07,FI_SW,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",13,5,58.66,9,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA07:2025:L11,CA07,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,6,4,32.7,4,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA07:2025:L12,CA07,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,6,4,32.7,4,poor,1.15,2029,2027,0,not_quantified,requires_expert_assessment
+CA08:2025:L09,CA08,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,11,8,58.9,1,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA08:2025:L10,CA08,FI_SW,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",2,1,7.34,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA08:2025:L11,CA08,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,5,2,23.37,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA08:2025:L12,CA08,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,5,2,23.37,0,poor,1.15,2029,2027,0,not_quantified,requires_expert_assessment
+CA08:2025:L24,CA08,FI_SW,2025,declared,L24,Irrigation scheduling & drip on carrots/potatoes,3,1,23.75,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA09:2025:L09,CA09,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,2,2,15.56,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA09:2025:L10,CA09,FI_SW,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",9,5,45.94,2,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA09:2025:L24,CA09,FI_SW,2025,declared,L24,Irrigation scheduling & drip on carrots/potatoes,8,3,27.15,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA10:2025:L09,CA10,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,3,3,18.77,0,good,1.3,2027,2027,1,not_quantified,requires_expert_assessment
+CA10:2025:L11,CA10,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,1,1,7.14,0,good,1.3,2027,2027,1,not_quantified,requires_expert_assessment
+CA10:2025:L12,CA10,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,1,1,7.14,0,good,1.3,2029,2027,0,not_quantified,requires_expert_assessment
+CA11:2025:L09,CA11,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,7,6,22.37,2,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA11:2025:L10,CA11,FI_SW,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",26,9,106.5,6,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA11:2025:L11,CA11,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,1,1,3.01,1,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA11:2025:L12,CA11,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,1,1,3.01,1,moderate,1.0,2029,2027,0,not_quantified,requires_expert_assessment
+CA11:2025:L24,CA11,FI_SW,2025,declared,L24,Irrigation scheduling & drip on carrots/potatoes,11,3,65.6,10,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA12:2025:L09,CA12,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,24,18,139.97,7,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA12:2025:L10,CA12,FI_SW,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",34,13,189.31,10,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA12:2025:L11,CA12,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,5,2,23.92,1,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA12:2025:L12,CA12,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,5,2,23.92,1,poor,1.15,2029,2027,0,not_quantified,requires_expert_assessment
+CA12:2025:L24,CA12,FI_SW,2025,declared,L24,Irrigation scheduling & drip on carrots/potatoes,7,4,82.96,1,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA13:2025:L09,CA13,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,7,4,41.46,4,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA14:2025:L09,CA14,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,21,12,152.13,6,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA14:2025:L10,CA14,FI_SW,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",31,8,185.13,13,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA14:2025:L11,CA14,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,4,2,18.66,1,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA14:2025:L12,CA14,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,4,2,18.66,1,moderate,1.0,2029,2027,0,not_quantified,requires_expert_assessment
+CA14:2025:L24,CA14,FI_SW,2025,declared,L24,Irrigation scheduling & drip on carrots/potatoes,7,3,40.15,1,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA15:2025:L09,CA15,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,6,4,44.55,1,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA15:2025:L10,CA15,FI_SW,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",9,4,47.74,2,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA15:2025:L11,CA15,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,1,1,12.72,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA15:2025:L12,CA15,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,1,1,12.72,0,poor,1.15,2029,2027,0,not_quantified,requires_expert_assessment
+CA15:2025:L24,CA15,FI_SW,2025,declared,L24,Irrigation scheduling & drip on carrots/potatoes,2,1,15.26,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA16:2025:L09,CA16,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,11,6,40.35,4,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA16:2025:L11,CA16,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,4,3,19.68,2,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA16:2025:L12,CA16,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,4,3,19.68,2,poor,1.15,2029,2027,0,not_quantified,requires_expert_assessment
+CA17:2025:L09,CA17,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,7,5,40.46,3,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA17:2025:L10,CA17,FI_SW,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",23,9,133.5,10,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA17:2025:L11,CA17,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,5,4,23.85,2,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA17:2025:L12,CA17,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,5,4,23.85,2,poor,1.15,2029,2027,0,not_quantified,requires_expert_assessment
+CA17:2025:L24,CA17,FI_SW,2025,declared,L24,Irrigation scheduling & drip on carrots/potatoes,1,1,6.11,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA18:2025:L09,CA18,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,10,8,50.41,1,bad,1.25,2027,2027,1,not_quantified,requires_expert_assessment
+CA18:2025:L10,CA18,FI_SW,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",15,9,88.44,3,bad,1.25,2027,2027,1,not_quantified,requires_expert_assessment
+CA18:2025:L11,CA18,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,9,3,43.98,0,bad,1.25,2027,2027,1,not_quantified,requires_expert_assessment
+CA18:2025:L12,CA18,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,9,3,43.98,0,bad,1.25,2029,2027,0,not_quantified,requires_expert_assessment
+CA18:2025:L24,CA18,FI_SW,2025,declared,L24,Irrigation scheduling & drip on carrots/potatoes,8,2,40.08,0,bad,1.25,2027,2027,1,not_quantified,requires_expert_assessment
+CA19:2025:L09,CA19,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,2,2,9.54,0,good,1.3,2027,2027,1,not_quantified,requires_expert_assessment
+CA20:2025:L11,CA20,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,2,2,11.19,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA20:2025:L12,CA20,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,2,2,11.19,0,poor,1.15,2029,2027,0,not_quantified,requires_expert_assessment
+CA20:2025:L24,CA20,FI_SW,2025,declared,L24,Irrigation scheduling & drip on carrots/potatoes,1,1,3.02,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA21:2025:L09,CA21,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,9,8,50.86,1,good,1.3,2027,2027,1,not_quantified,requires_expert_assessment
+CA21:2025:L11,CA21,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,3,1,13.45,0,good,1.3,2027,2027,1,not_quantified,requires_expert_assessment
+CA21:2025:L12,CA21,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,3,1,13.45,0,good,1.3,2029,2027,0,not_quantified,requires_expert_assessment
+CA22:2025:L09,CA22,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,2,2,7.86,1,good,1.3,2027,2027,1,not_quantified,requires_expert_assessment
+CA23:2025:L09,CA23,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,8,7,52.83,1,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA23:2025:L11,CA23,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,2,1,5.8,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA23:2025:L12,CA23,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,2,1,5.8,0,moderate,1.0,2029,2027,0,not_quantified,requires_expert_assessment
+CA24:2025:L09,CA24,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,26,17,140.08,7,good,1.3,2027,2027,1,not_quantified,requires_expert_assessment
+CA24:2025:L10,CA24,FI_SW,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",34,11,204.99,7,good,1.3,2027,2027,1,not_quantified,requires_expert_assessment
+CA24:2025:L11,CA24,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,8,4,50.0,1,good,1.3,2027,2027,1,not_quantified,requires_expert_assessment
+CA24:2025:L12,CA24,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,8,4,50.0,1,good,1.3,2029,2027,0,not_quantified,requires_expert_assessment
+CA24:2025:L24,CA24,FI_SW,2025,declared,L24,Irrigation scheduling & drip on carrots/potatoes,7,1,35.63,0,good,1.3,2027,2027,1,not_quantified,requires_expert_assessment
+CA25:2025:L09,CA25,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,12,7,54.01,5,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA25:2025:L10,CA25,FI_SW,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",1,1,11.8,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA25:2025:L11,CA25,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,3,2,14.41,1,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA25:2025:L12,CA25,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,3,2,14.41,1,poor,1.15,2029,2027,0,not_quantified,requires_expert_assessment
+CA26:2025:L09,CA26,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,4,4,23.93,3,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA27:2025:L09,CA27,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,2,2,12.66,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CA28:2025:L09,CA28,FI_SW,2025,declared,L09,Precision / variable-rate N and soil testing programme,9,9,52.12,2,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA28:2025:L10,CA28,FI_SW,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",21,12,134.06,6,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA28:2025:L11,CA28,FI_SW,2025,declared,L11,Shift contract area away from drained organic (peat) soils,7,3,27.63,2,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CA28:2025:L12,CA28,FI_SW,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,7,3,27.63,2,moderate,1.0,2029,2027,0,not_quantified,requires_expert_assessment
+CA28:2025:L24,CA28,FI_SW,2025,declared,L24,Irrigation scheduling & drip on carrots/potatoes,9,2,38.31,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS01:2025:L09,CS01,SE_SKANE,2025,declared,L09,Precision / variable-rate N and soil testing programme,5,3,19.86,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CS01:2025:L10,CS01,SE_SKANE,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",12,6,51.78,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CS02:2025:L09,CS02,SE_SKANE,2025,declared,L09,Precision / variable-rate N and soil testing programme,28,23,124.19,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS02:2025:L10,CS02,SE_SKANE,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",106,39,514.17,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS03:2025:L09,CS03,SE_SKANE,2025,declared,L09,Precision / variable-rate N and soil testing programme,13,11,72.46,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CS03:2025:L10,CS03,SE_SKANE,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",48,22,284.82,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CS03:2025:L11,CS03,SE_SKANE,2025,declared,L11,Shift contract area away from drained organic (peat) soils,3,3,9.95,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CS03:2025:L12,CS03,SE_SKANE,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,3,3,9.95,0,poor,1.15,2029,2027,0,not_quantified,requires_expert_assessment
+CS04:2025:L09,CS04,SE_SKANE,2025,declared,L09,Precision / variable-rate N and soil testing programme,19,10,105.57,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS04:2025:L10,CS04,SE_SKANE,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",55,22,337.36,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS04:2025:L11,CS04,SE_SKANE,2025,declared,L11,Shift contract area away from drained organic (peat) soils,2,2,36.27,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS04:2025:L12,CS04,SE_SKANE,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,2,2,36.27,0,moderate,1.0,2029,2027,0,not_quantified,requires_expert_assessment
+CS05:2025:L10,CS05,SE_SKANE,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",2,1,14.53,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CS06:2025:L09,CS06,SE_SKANE,2025,declared,L09,Precision / variable-rate N and soil testing programme,20,14,103.97,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS06:2025:L10,CS06,SE_SKANE,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",57,28,303.22,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS06:2025:L11,CS06,SE_SKANE,2025,declared,L11,Shift contract area away from drained organic (peat) soils,2,1,16.21,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS06:2025:L12,CS06,SE_SKANE,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,2,1,16.21,0,moderate,1.0,2029,2027,0,not_quantified,requires_expert_assessment
+CS07:2025:L09,CS07,SE_SKANE,2025,declared,L09,Precision / variable-rate N and soil testing programme,15,13,86.16,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS07:2025:L10,CS07,SE_SKANE,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",87,43,510.84,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS07:2025:L11,CS07,SE_SKANE,2025,declared,L11,Shift contract area away from drained organic (peat) soils,1,1,2.58,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS07:2025:L12,CS07,SE_SKANE,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,1,1,2.58,0,moderate,1.0,2029,2027,0,not_quantified,requires_expert_assessment
+CS08:2025:L09,CS08,SE_SKANE,2025,declared,L09,Precision / variable-rate N and soil testing programme,14,10,58.56,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CS08:2025:L10,CS08,SE_SKANE,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",56,27,352.68,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CS08:2025:L11,CS08,SE_SKANE,2025,declared,L11,Shift contract area away from drained organic (peat) soils,1,1,6.4,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CS08:2025:L12,CS08,SE_SKANE,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,1,1,6.4,0,poor,1.15,2029,2027,0,not_quantified,requires_expert_assessment
+CS09:2025:L09,CS09,SE_SKANE,2025,declared,L09,Precision / variable-rate N and soil testing programme,5,5,16.37,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS09:2025:L10,CS09,SE_SKANE,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",22,11,107.99,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS09:2025:L11,CS09,SE_SKANE,2025,declared,L11,Shift contract area away from drained organic (peat) soils,1,1,4.66,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS09:2025:L12,CS09,SE_SKANE,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,1,1,4.66,0,moderate,1.0,2029,2027,0,not_quantified,requires_expert_assessment
+CS10:2025:L09,CS10,SE_SKANE,2025,declared,L09,Precision / variable-rate N and soil testing programme,18,15,109.15,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS10:2025:L10,CS10,SE_SKANE,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",89,44,535.34,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS10:2025:L11,CS10,SE_SKANE,2025,declared,L11,Shift contract area away from drained organic (peat) soils,13,7,115.63,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS10:2025:L12,CS10,SE_SKANE,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,13,7,115.63,0,moderate,1.0,2029,2027,0,not_quantified,requires_expert_assessment
+CS11:2025:L09,CS11,SE_SKANE,2025,declared,L09,Precision / variable-rate N and soil testing programme,6,6,23.36,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS11:2025:L10,CS11,SE_SKANE,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",43,18,200.16,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS11:2025:L11,CS11,SE_SKANE,2025,declared,L11,Shift contract area away from drained organic (peat) soils,1,1,13.06,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS11:2025:L12,CS11,SE_SKANE,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,1,1,13.06,0,moderate,1.0,2029,2027,0,not_quantified,requires_expert_assessment
+CS12:2025:L09,CS12,SE_SKANE,2025,declared,L09,Precision / variable-rate N and soil testing programme,3,2,10.44,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS12:2025:L10,CS12,SE_SKANE,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",20,9,119.04,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS12:2025:L11,CS12,SE_SKANE,2025,declared,L11,Shift contract area away from drained organic (peat) soils,2,1,10.77,0,moderate,1.0,2027,2027,1,not_quantified,requires_expert_assessment
+CS12:2025:L12,CS12,SE_SKANE,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,2,1,10.77,0,moderate,1.0,2029,2027,0,not_quantified,requires_expert_assessment
+CS13:2025:L09,CS13,SE_SKANE,2025,declared,L09,Precision / variable-rate N and soil testing programme,16,15,75.76,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CS13:2025:L10,CS13,SE_SKANE,2025,declared,L10,"Catch crops after early-harvested crops (peas, spinach)",63,35,308.1,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CS13:2025:L11,CS13,SE_SKANE,2025,declared,L11,Shift contract area away from drained organic (peat) soils,2,2,8.56,0,poor,1.15,2027,2027,1,not_quantified,requires_expert_assessment
+CS13:2025:L12,CS13,SE_SKANE,2025,declared,L12,Rewetting / paludiculture pilot on retired peat parcels,2,2,8.56,0,poor,1.15,2029,2027,0,not_quantified,requires_expert_assessment

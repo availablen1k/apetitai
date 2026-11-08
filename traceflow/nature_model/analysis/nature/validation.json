@@ -1,0 +1,120 @@
+{
+  "foreign_keys": "passed",
+  "integrity": "passed",
+  "observation_joins": "passed",
+  "query_contributors": "passed",
+  "rows": {
+    "farm": 680,
+    "parcel": 14213,
+    "parcel_crop_year": 284260,
+    "farm_crop_observation": 6120,
+    "current_calculator_footprint": 3437,
+    "catchment": 42,
+    "catchment_monitoring": 105,
+    "parcel_geometry": 14213,
+    "catchment_geometry": 42,
+    "origin_nature_indicator": 17,
+    "source_file": 30,
+    "source_record": 470221,
+    "record_dependency": 1317541,
+    "column_lineage": 301,
+    "query_run": 22,
+    "query_result": 3311,
+    "quality_rule": 22,
+    "quality_finding": 7006,
+    "quality_scope": 67242,
+    "quarantine_record": 0,
+    "climate_grid_cell": 84,
+    "weather_monthly": 139104,
+    "climate_change_signal": 36,
+    "parcel_climate_mapping": 14213,
+    "weather_annual": 11592,
+    "material": 48,
+    "supplier": 86,
+    "erp_purchase": 7427,
+    "fx_reference_assumption": 3,
+    "material_crop_mapping": 5,
+    "site": 5,
+    "emission_factor": 84,
+    "material_factor_resolution": 48,
+    "material_site_resolution": 48,
+    "erp_site_resolution": 7427,
+    "reference_source": 36,
+    "evidence_document": 4,
+    "evidence_section": 22,
+    "method_context": 9,
+    "method_evidence": 12,
+    "action_lever": 30,
+    "structural_event": 12,
+    "transition_scenario": 49,
+    "contract_price": 54,
+    "price_crop_mapping": 6,
+    "published_inventory": 5,
+    "draft_report_line": 4,
+    "nature_action_rule": 5,
+    "nature_action_candidate": 36312
+  },
+  "year_coverage": {
+    "parcel_crop_year": {
+      "first_year": 2012,
+      "last_year": 2031,
+      "distinct_years": 20
+    },
+    "farm_crop_observation": {
+      "first_year": 2012,
+      "last_year": 2026,
+      "distinct_years": 15
+    },
+    "current_calculator_footprint": {
+      "first_year": 2012,
+      "last_year": 2026,
+      "distinct_years": 15
+    },
+    "catchment_monitoring": {
+      "first_year": 2019,
+      "last_year": 2025,
+      "distinct_years": 7
+    },
+    "weather_monthly": {
+      "first_year": 1991,
+      "last_year": 2060,
+      "distinct_years": 70
+    },
+    "erp_purchase": {
+      "first_year": 2021,
+      "last_year": 2025,
+      "distinct_years": 5
+    },
+    "transition_scenario": {
+      "first_year": 2025,
+      "last_year": 2050,
+      "distinct_years": 7
+    },
+    "contract_price": {
+      "first_year": 2018,
+      "last_year": 2026,
+      "distinct_years": 9
+    },
+    "published_inventory": {
+      "first_year": 2019,
+      "last_year": 2024,
+      "distinct_years": 5
+    },
+    "draft_report_line": {
+      "first_year": 2025,
+      "last_year": 2025,
+      "distinct_years": 1
+    }
+  },
+  "quality_findings_by_rule": {
+    "area_difference": 85,
+    "draft_total_mismatch": 1,
+    "erp_material_text": 30,
+    "erp_price_outlier": 115,
+    "farm_coordinate_review": 3,
+    "missing_management": 4105,
+    "missing_soil_p": 2518,
+    "peer_outlier": 127,
+    "temporal_change": 22
+  }
+}
