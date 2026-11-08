@@ -18,8 +18,8 @@ Working prototype · synthetic challenge data</p>
 
 | | |
 |---|---|
-| Username | `<ADD USERNAME>` |
-| Password | `<ADD PASSWORD>` |
+| Username | jury |
+| Password | tj67KLTFJbwaPDtwhRmfr3tm |
 
 The demo runs on a team laptop behind a temporary Cloudflare tunnel. It is available until
 **9 November 2026, 00:25 (Helsinki/Athens time)** and while that laptop is online. Everyone who
